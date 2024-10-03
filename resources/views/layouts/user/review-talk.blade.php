@@ -1,7 +1,7 @@
 {{-- Review talk --}}
 <section class="container py-5">
     <div class="title-review-talk rounded position-relative">
-        <span class="icon-rating-menu"></span>
+        <span class="icon-cat-menu icon-cat-menu--rating"></span>
         <p class="mb-0 text-white font-weight-bold">Reviewer nói gì về dienthoaihay.vn ?</p>
     </div>
     <div class="row mt-4">

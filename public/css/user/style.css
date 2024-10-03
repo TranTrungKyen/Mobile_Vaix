@@ -228,7 +228,7 @@ header {
     padding: 18px 18px 18px 200px;
     background-color: var(--main-color);
 }
-.icon-rating-menu {
+.icon-cat-menu {
     position: absolute;
     left: 15px;
     background: url(https://dienthoaihay.vn/templates/choihay/images/icon_dth.png);
@@ -244,7 +244,7 @@ header {
     justify-content: center;
     z-index: 1;
 }
-.icon-rating-menu::before {
+.icon-cat-menu--rating::before {
     position: absolute;
     left: 50%;
     content: '';
@@ -354,4 +354,8 @@ a:hover {
 .contact-text {
     font-size: 12px;
     font-weight: bold;
+}
+
+.separate {
+    border-right: 1px solid var(--border-color);
 }

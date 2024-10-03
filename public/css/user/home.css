@@ -1,0 +1,80 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+.menu-item:last-child {
+    border-bottom: none;
+}
+.menu-icon {
+    width: 24px;
+    margin-right: 15px;
+    text-align: center;
+}
+.menu-text {
+    flex-grow: 1;
+}
+.chevron {
+    color: #6c757d;
+}
+
+.list-group {
+    border: 1px solid var(--border-color);
+}
+
+.list-group .list-group-item {
+    border: none;
+}
+
+.menu-item {
+    padding: 7px 15px;
+}
+
+.promo-banner {
+    background-color: #ff0000;
+    padding: 20px;
+    border-radius: 10px;
+}
+.hot-label {
+    background-color: #ff6600;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(-15deg);
+}
+.promo-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.brand-links {
+    font-size: 1.2rem;
+}
+.brand-links a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-82%);
+}
+.next-btn {
+    right: 0;
+}
+.prev-btn {
+    left: 0;
+}
+
