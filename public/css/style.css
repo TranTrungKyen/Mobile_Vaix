@@ -1,0 +1,357 @@
+:root {
+    --main-color: #ff0000;
+    --extra-color: #ff6100;
+    --black-color: #23232B;
+    --border-color: #e7e7e77d;
+    --blue-color: #288ad6;
+
+    --border-radius: 10px;
+    --header-height: 66px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: 99;
+}
+
+.w-96 {
+    width: 96%;
+}
+
+#app {
+    padding-top: var(--header-height);
+}
+
+.text-primary-custom {
+    color: var(--main-color);
+}
+
+.bg-primary-custom {
+    background-color: var(--main-color);
+}
+
+.p-40 {
+    padding: 40px !important;
+}
+
+.font-size-10 {
+    font-size: 10px;
+}
+
+.font-size-12 {
+    font-size: 12px;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.font-size-24 {
+    font-size: 24px;
+}
+
+.logo_img .img{
+    max-width: 100%;
+}
+
+.phone {
+    position: absolute;
+    bottom: 4px;
+    right: 2px;
+}
+
+.search {
+    height: 40px;
+}
+
+.search__input {
+    outline: none;
+}
+
+.header-left-icons__item .icon {
+    height: 40px;
+    width: 40px;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    height: 20px;
+    width: 20px;
+}
+
+.footer {
+    color: white;
+}
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.footer ul li {
+    margin-bottom: 10px;
+}
+.payment-methods img, .shipping-methods img {
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.certified img {
+    height: 50px;
+}
+
+.fb-preview {
+    max-width: 500px;
+    border: 1px solid #dddfe2;
+    border-radius: 3px;
+    background-color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.fb-header {
+    padding: 12px;
+    border-bottom: 1px solid #dddfe2;
+}
+.fb-logo {
+    width: 40px;
+    height: 40px;
+    background-color: #ff0000;
+    border-radius: 3px;
+}
+.fb-page-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #385898;
+}
+.fb-followers {
+    font-size: 12px;
+    color: #606770;
+}
+.fb-image {
+    width: 100%;
+    height: auto;
+}
+.fb-buttons {
+    padding: 12px;
+}
+.fb-button {
+    padding: 0 8px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.price-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffeb3b;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.product-image {
+    width: 100%;
+    height: auto;
+}
+.product-title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.product-price {
+    color: #d0021b;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9em;
+}
+.discount-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #d0021b;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.star-rating {
+    font-size: 14px;
+    color: #ffc107;
+}
+.rating-button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.product-info {
+    font-size: 0.9rem;
+}
+.check-icon {
+    color: #28a745;
+}
+.bg-secondary-custom {
+    background-color: #ebebeb;
+}
+.title-review-talk {
+    display: inline-flex;
+    padding: 18px 18px 18px 200px;
+    background-color: var(--main-color);
+}
+.icon-rating-menu {
+    position: absolute;
+    left: 15px;
+    background: url(https://dienthoaihay.vn/templates/choihay/images/icon_dth.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 185px;
+    height: 49px;
+    top: -9px;
+    box-sizing: border-box;
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.icon-rating-menu::before {
+    position: absolute;
+    left: 50%;
+    content: '';
+    width: 115px;
+    height: 26px;
+    background: url(https://dienthoaihay.vn/templates/choihay/images/icon_star.png);
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    z-index: 1;
+    background-repeat: no-repeat;
+}
+.social-menu {
+    position: fixed;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+}
+.social-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.1);
+    background-color: var(--extra-color);
+}
+.youtube {
+    background-color: #FF0000;
+}
+.facebook {
+    background-color: #3b5998;
+}
+.messenger {
+    background-color: #0084FF;
+}
+.tiktok {
+    background-color: #000000;
+}
+a:hover {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff7f7f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    color: var(--black-color) !important;
+    background-color: #ff6b6b;
+}
+.contact-button {
+    position: fixed;
+    bottom: 24px;
+    left: 12px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #dc3545;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover,
+.contact-button:focus {
+    background-color: #c82333;
+    color: white;
+    text-decoration: none;
+}
+
+.contact-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.contact-text {
+    font-size: 12px;
+    font-weight: bold;
+}
