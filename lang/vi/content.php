@@ -24,7 +24,7 @@ return [
         'name_page' => [
             'login' => [
                 'user' => 'KMobile',
-                'admin' => 'KMobile Admin',
+                'admin' => 'Vaix Admin',
             ],
         ],
         'title' => [
