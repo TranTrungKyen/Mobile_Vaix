@@ -6,7 +6,7 @@
             <a 
             {{-- href="{{ route('admin.dashboard') }}" --}}
              class="logo">
-                <h2 class="text-white mb-0">KMobile</h2>
+                <h2 class="text-white mb-0">VAIX</h2>
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
