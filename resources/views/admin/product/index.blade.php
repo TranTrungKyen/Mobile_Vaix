@@ -24,8 +24,9 @@
                                             <th>STT</th>
                                             <th>Tên</th>
                                             <th>Danh mục</th>
-                                            <th>Hãng</th>
-                                            <th>Tiêu đề</th>
+                                            <th>Độ phân giải</th>
+                                            <th>Kiểu thiết kế</th>
+                                            <th>Pin</th>
                                             <th>Mô tả</th>
                                             <th>Ngày cập nhật</th>
                                             <th>Hành động</th>
@@ -36,8 +37,9 @@
                                             <th>STT</th>
                                             <th>Tên</th>
                                             <th>Danh mục</th>
-                                            <th>Hãng</th>
-                                            <th>Tiêu đề</th>
+                                            <th>Độ phân giải</th>
+                                            <th>Kiểu thiết kế</th>
+                                            <th>Pin</th>
                                             <th>Mô tả</th>
                                             <th>Ngày cập nhật</th>
                                             <th>Hành động</th>
@@ -48,9 +50,10 @@
                                             <tr data-id="{{ $item->id }}">
                                                 <td>{{ ++$index }}</td>
                                                 <td>{{ $item->name }}</td>
-                                                <td>{{ $item->category->name }}</td>
-                                                <td>{{ $item->brand->name }}</td>
-                                                <td>{{ $item->title }}</td>
+                                                <td>{{ $item->category->name ?? '' }}</td>
+                                                <td>{{ $item->screen_resolution }}</td>
+                                                <td>{{ $item->design_style }}</td>
+                                                <td>{{ $item->pin }}</td>
                                                 <td>
                                                     <div class="description">
                                                         {{ $item->description }}
@@ -58,7 +61,7 @@
                                                 </td>
                                                 <td>{{ $item->updated_at }}</td>
                                                 <td>
-                                                    <div class="d-flex">
+                                                    {{-- <div class="d-flex">
                                                         <a class="btn shadow-none"
                                                             href="{{ route('admin.product.detail', ['id' => $item->id] ) }}">
                                                             <i class="fa-solid fa-eye"></i>
@@ -81,7 +84,7 @@
                                                             data-route="{{ route('admin.product.delete', ['id' => $item->id]) }}">
                                                             <i class="fa-solid fa-trash"></i>
                                                         </button>
-                                                    </div>  
+                                                    </div>   --}}
                                                 </td>
                                             </tr>
                                         @endforeach
