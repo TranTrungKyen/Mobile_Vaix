@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Image extends Model
 {
     use HasFactory;
 
-    protected $table = 'roles';
+    protected $table = 'images';
 
     protected $fillable = [
-        'name',
+        'url', 
     ];
 
-    public function user()
+    public function imageable()
     {
-        return $this->hasMany(User::class);
+        return $this->morphTo();
     }
 }
