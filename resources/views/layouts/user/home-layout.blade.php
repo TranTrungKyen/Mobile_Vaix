@@ -189,365 +189,60 @@
                         <div class="carousel-item active">
                             <div class="row">
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row">
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                                 <div class="col-md-4 col-lg-3">
-                                    <div class="product-card">
-                                        <div class="text-center position-relative">
-                                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                                alt="realme GT2 Pro" class="product-image">
-                                            <span class="discount-badge">Giảm 600.000₫</span>
-                                        </div>
-                                        <h4 class="product-title">realme GT2 Pro</h3>
-                                            <div class="d-flex align-items-end font-size-14">
-                                                <p class="product-price mr-2">15.390.000₫</p>
-                                                <p class="original-price">15.990.000₫</p>
-                                            </div>
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="far fa-star"></i>
-                                                <span class="ml-2">1 đánh giá</span>
-                                            </div>
-                                    </div>
+                                    <x-product-card :product="[]"/>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <button class="carousel-control py-2 next-btn">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
@@ -570,92 +265,16 @@
             </div>
             <div class="row mt-4">
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
             </div>
         </section>
@@ -670,92 +289,16 @@
             </div>
             <div class="row mt-4">
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
                 <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="text-center position-relative">
-                            <img src="{{ asset('images/iphone-16-pro-max---titan.jpg') }}"
-                                alt="realme GT2 Pro" class="product-image">
-                            <span class="discount-badge">Giảm 600.000₫</span>
-                        </div>
-                        <h4 class="product-title">realme GT2 Pro</h3>
-                            <div class="d-flex align-items-end font-size-14">
-                                <p class="product-price mr-2">15.390.000₫</p>
-                                <p class="original-price">15.990.000₫</p>
-                            </div>
-                            <div class="star-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span class="ml-2">1 đánh giá</span>
-                            </div>
-                    </div>
+                    <x-product-card :product="[]"/>
                 </div>
             </div>
         </section>
