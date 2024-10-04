@@ -4,17 +4,21 @@ $(document).ready(function () {
         e.preventDefault(); // avoid to execute the actual submit of the form.
         let form = new FormData(this);
         let actionUrl = $(this).attr('action');
-
+        
         $.ajax({
             type: "POST",
             url: actionUrl,
             data: form,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             processData: false,
             contentType: false, 
             success: function (data) {
+                console.log(data);
                 if (data.status) {
                     localStorage.setItem('success', data.message);
-                    window.location.href = data.redrirectRoute;
+                    window.location.href = data.redirectRoute;
                 } else {
                     toastr.error(data.message);
                 }

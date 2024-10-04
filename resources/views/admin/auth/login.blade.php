@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- Toastr css --}}
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     {{-- Custorm css --}}
@@ -17,7 +18,6 @@
         <div class="container" id="container">
             <div class="form-container sign-in-container">
                 <form id="login-form" action="{{ route('admin.post-login') }}" method="POST">
-                    @csrf
                     <h1>{{ __('content.login_form.header.login') }}</h1>
                     <input type="email" name="email" placeholder="{{ __('content.login_form.label.email') }}" value="{{ old('email') }}"/>
                     @if ($errors->has('email'))
@@ -49,6 +49,8 @@
     <script src="{{ asset('js/core/jquery-3.7.1.min.js') }}"></script>
     {{-- Toastr   --}}
     <script src="{{asset('plugins/toastr/toastr.min.js')}}"></script>
+    {{-- Login js --}}
+    <script src="{{ asset('js/admin/login.js') }}"></script>
     {{-- Show toastr --}}
     <script>
         // for success - green box
