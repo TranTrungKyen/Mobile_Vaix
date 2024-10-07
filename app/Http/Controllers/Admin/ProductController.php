@@ -114,4 +114,17 @@ class ProductController extends Controller
 
         return view('admin.product.detail', ['product' => $product]);
     }
+
+    public function delete($id)
+    {
+        try {
+            $this->productService->delete($id);
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+
+            return redirect()->route('admin.product.index')->with('error', __('content.common.notify_message.error.delete'));
+        }
+
+        return redirect()->route('admin.product.index')->with('success', __('content.common.notify_message.success.delete'));
+    }
 }
