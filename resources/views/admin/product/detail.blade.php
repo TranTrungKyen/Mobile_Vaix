@@ -33,71 +33,139 @@
                         <div class="card-body">
                             <div class="info-product">
                                 <div class="row">
-                                    <div class="col-md-2">
-                                        <p>
-                                            Tên sản phẩm:
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    Tên sản phẩm:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->name }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p>
-                                            {{ $product->name }}
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    Danh mục:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->category->name }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <p>
-                                            Tiêu đề:
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    Tiêu đề phụ:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->sub_title }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p>
-                                            {{ $product->title }}
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    Thẻ sim phụ:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->sim_card }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <p>
-                                            Hãng:
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    CPU:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->cpu }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p>
-                                            {{ $product->brand->name }}
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    Dung lượng pin:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->pin }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <p>
-                                            Danh mục:
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    Kiểu thiết kế:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->design_style }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <p>
-                                            {{ $product->category->name }}
-                                        </p>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <p>
+                                                    Độ phân giải:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    {{ $product->screen_resolution }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <p>
-                                            Mô tả:
-                                        </p>
-                                    </div>
-                                    <div class="col">
-                                        <p class="description line-clamp-4">{!! nl2br(e($product->description)) !!}</p>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <p>
+                                                    Mô tả:
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p class="description line-clamp-4">{!! nl2br(e($product->description)) !!}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="list-images">
-                                <div class="container">
+                                <div class="container mx-0">
                                     <p class="card-title mb-2">Ảnh sản phẩm</p>
                                     <div class="row row-cols-4 row-cols-md-6 g-4">
                                         @foreach ($product->images as $item)
                                             <div class="col">
-                                                <img src="{{ Storage::url($item->path) }}" class="img-fluid" alt="Image {{ $item->id }}">
+                                                <img src="{{ asset($item->url) }}" class="img-fluid" alt="Image {{ $item->id }}">
                                             </div>
                                         @endforeach
                                         @if(count($product->images) == 0)
@@ -119,7 +187,6 @@
                                                         <th>STT</th>
                                                         <th>Màu sắc</th>
                                                         <th>Dung lượng</th>
-                                                        <th>Imei</th>
                                                         <th>Số lượng còn</th>
                                                         <th>Giá</th>
                                                     </tr>
@@ -129,7 +196,6 @@
                                                         <th>STT</th>
                                                         <th>Màu sắc</th>
                                                         <th>Dung lượng</th>
-                                                        <th>Imei</th>
                                                         <th>Số lượng còn</th>
                                                         <th>Giá</th>
                                                     </tr>
@@ -139,9 +205,8 @@
                                                         <tr>
                                                             <td>{{ ++$index }}</td>
                                                             <td>{{ $item->color->name }}</td>
-                                                            <td>{{ $item->storage->storage }}</td>
-                                                            <td>{{ $item->imeis->sortByDesc('updated_at')->first()->imei ?? 'Không có' }}</td>
-                                                            <td>{{ $item->qty }}</td>
+                                                            <td>{{ $item->storage->name }}</td>
+                                                            <td>{{ $item->quantity }}</td>
                                                             <td class="price-js--vi" data-amount="{{ $item->price }}">{{ $item->price }}</td>
                                                         </tr>
                                                     @endforeach

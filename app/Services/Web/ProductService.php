@@ -26,4 +26,9 @@ class ProductService implements ProductServiceInterface
     {
         return $this->repository->create($data);
     }
+
+    public function find($id)
+    {
+        return $this->repository->find($id);
+    }
 }

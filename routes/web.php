@@ -37,5 +37,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('/store', [AdminProductController::class, 'store'])->name('store');
         Route::get('/create/detail', [AdminProductController::class, 'createDetail'])->name('create-detail');
         Route::post('/store/detail', [AdminProductController::class, 'storeDetail'])->name('store-detail');
+        Route::get('/detail/{id}', [AdminProductController::class, 'detail'])->name('detail');
     });
 });

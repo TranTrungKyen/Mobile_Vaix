@@ -107,4 +107,11 @@ class ProductController extends Controller
 
         return response()->json($notification);
     }
+
+    public function detail($id)
+    {
+        $product = $this->productService->find($id);
+
+        return view('admin.product.detail', ['product' => $product]);
+    }
 }
