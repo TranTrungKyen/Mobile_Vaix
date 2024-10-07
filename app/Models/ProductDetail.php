@@ -12,11 +12,11 @@ class ProductDetail extends Model
     protected $table = 'product_details';
 
     protected $fillable = [
-        'product_id', 
-        'color_id', 
-        'storage_id', 
-        'quantity', 
-        'price', 
+        'product_id',
+        'color_id',
+        'storage_id',
+        'quantity',
+        'price',
     ];
 
     public function product()

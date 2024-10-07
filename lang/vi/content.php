@@ -237,16 +237,33 @@ return [
                     'max' => 'Vui lòng nhập lại tên sản phẩm không quá :max ký tự',
                     'unique' => 'Vui lòng nhập lại tên sản phẩm do tên đã tồn tại',
                 ],
-                'title' => [
-                    'required' => 'Vui lòng nhập lại tiêu đề sản phẩm',
-                    'max' => 'Vui lòng nhập lại tiêu đề không quá :max ký tự',
-                    'unique' => 'Vui lòng nhập lại tiêu đề sản phẩm do tiêu đề đã tồn tại',
+                'sub_title' => [
+                    'required' => 'Vui lòng nhập lại tiêu đề phụ phụ sản phẩm',
+                    'max' => 'Vui lòng nhập lại tiêu đề phụ không quá :max ký tự',
                 ],
                 'description' => [
                     'required' => 'Vui lòng nhập lại mô tả sản phẩm',
+                    'max' => 'Vui lòng nhập lại mô tả không quá :max ký tự',
                 ],
-                'brand_id' => [
-                    'required' => 'Vui lòng nhập lại hãng sản phẩm',
+                'sim_card' => [
+                    'required' => 'Vui lòng nhập lại sim thẻ sản phẩm',
+                    'max' => 'Vui lòng nhập lại sim thẻ không quá :max ký tự',
+                ],
+                'cpu' => [
+                    'required' => 'Vui lòng nhập lại CPU sản phẩm',
+                    'max' => 'Vui lòng nhập lại CPU không quá :max ký tự',
+                ],
+                'pin' => [
+                    'required' => 'Vui lòng nhập lại dung lượng pin sản phẩm',
+                    'max' => 'Vui lòng nhập lại dung lượng pin không quá :max ký tự',
+                ],
+                'design_stype' => [
+                    'required' => 'Vui lòng nhập lại kiểu thiết kế sản phẩm',
+                    'max' => 'Vui lòng nhập lại kiểu thiết kế không quá :max ký tự',
+                ],
+                'screen_resolution' => [
+                    'required' => 'Vui lòng nhập lại độ phân giải sản phẩm',
+                    'max' => 'Vui lòng nhập lại độ phân giải không quá :max ký tự',
                 ],
                 'category_id' => [
                     'required' => 'Vui lòng nhập lại danh mục sản phẩm',

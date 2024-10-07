@@ -3,19 +3,17 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Product;
+use App\Repositories\Contracts\ProductRepository;
 use App\Repositories\Traits\RepositoryTraits;
 use Prettus\Repository\Eloquent\BaseRepository;
-use App\Repositories\Contracts\ProductRepository;
 
 /**
  * Class ProductRepositoryEloquent.
- *
- * @package namespace App\Repositories;
  */
 class ProductRepositoryEloquent extends BaseRepository implements ProductRepository
 {
     use RepositoryTraits;
-    
+
     /**
      * Specify Model class name
      *
@@ -26,9 +24,5 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         return Product::class;
     }
 
-    public function buildQuery($model, $filters)
-    {
-        
-    }
-
+    public function buildQuery($model, $filters) {}
 }

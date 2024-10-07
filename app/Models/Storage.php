@@ -12,9 +12,9 @@ class Storage extends Model
     protected $table = 'storages';
 
     protected $fillable = [
-        'name', 
+        'name',
     ];
-    
+
     public function productDetails()
     {
         return $this->hasMany(ProductDetail::class);

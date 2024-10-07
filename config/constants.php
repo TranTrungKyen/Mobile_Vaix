@@ -16,9 +16,9 @@ const VALIDATE_MESSAGE_URL = [
     'BACKEND' => 'content.validate.backend.',
 ];
 
-const AVT_URL = [
+const IMAGE = [
     'DEFAULT' => 'images/default.png',
-    'STORAGE_PATH' => 'public/uploads',
+    'STORAGE_PATH' => 'uploads',
 ];
 
 const PASSWORD_DEFAULT_1 = 'password';

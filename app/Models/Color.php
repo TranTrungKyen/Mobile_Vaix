@@ -12,9 +12,9 @@ class Color extends Model
     protected $table = 'colors';
 
     protected $fillable = [
-        'name', 
+        'name',
     ];
-    
+
     public function productDetails()
     {
         return $this->hasMany(ProductDetail::class);

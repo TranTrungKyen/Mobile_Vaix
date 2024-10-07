@@ -28,11 +28,14 @@ Route::name('user.')->group(function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/login', [AdminController::class, 'login'])->name('login');
     Route::post('/login', [AdminController::class, 'postLogin'])->name('post-login');
-    
+
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
     Route::prefix('product')->name('product.')->group(function () {
         Route::get('/', [AdminProductController::class, 'index'])->name('index');
-        Route::get('/create', [AdminProductController::class, 'index'])->name('create');
+        Route::get('/create', [AdminProductController::class, 'create'])->name('create');
+        Route::post('/store', [AdminProductController::class, 'store'])->name('store');
+        Route::get('/create/detail', [AdminProductController::class, 'createDetail'])->name('create-detail');
+        Route::post('/store/detail', [AdminProductController::class, 'storeDetail'])->name('store-detail');
     });
 });

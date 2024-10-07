@@ -7,20 +7,23 @@ use App\Services\Contracts\ProductServiceInterface;
 
 /**
  * Class ProductService.
- *
- * @package namespace App\Services\Web;
  */
 class ProductService implements ProductServiceInterface
 {
     protected $repository;
 
-    public function __construct(ProductRepository $productRepository)
+    public function __construct(ProductRepository $repository)
     {
-        $this->repository = $productRepository;
+        $this->repository = $repository;
     }
 
     public function all()
     {
         return $this->repository->orderBy('updated_at', 'desc')->all();
+    }
+
+    public function store($data)
+    {
+        return $this->repository->create($data);
     }
 }

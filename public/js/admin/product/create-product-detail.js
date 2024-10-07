@@ -6,7 +6,7 @@ $(document).ready(function () {
     addProductDetailBtn.on('click', function (e) {
         const rowInputDataHtmls = `
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="color_id">Màu sắc</label>
                     <span class="text-danger">*</span>
@@ -22,25 +22,18 @@ $(document).ready(function () {
                     <span class="text-danger">*</span>
                     <select class="form-select" id="storage_id[${indexRow}]" name="storage_id[]">
                         <option value="" hidden selected hidden>Chọn dung lượng</option>
-                        ${storages.map(storage => `<option value="${storage.id}">${storage.storage}</option>`).join('')}
+                        ${storages.map(storage => `<option value="${storage.id}">${storage.name}</option>`).join('')}
                     </select>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="form-group">
-                    <label for="imei">Mã imei:</label>
-                    <span class="text-danger">*</span>
-                    <input type="number" class="form-control" name="imei[]" id="imei[${indexRow}]">
-                </div>
-            </div>
-            <div class="col-md-2">
                 <div class="form-group">
                     <label for="qty">Số lượng</label>
                     <span class="text-danger">*</span>
                     <input type="number" class="form-control" name="qty[]" id="qty[${indexRow}]">
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label for="price">Giá</label>
                     <span class="text-danger">*</span>
