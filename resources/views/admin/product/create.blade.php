@@ -30,7 +30,8 @@
                         <div class="card-header">
                             <div class="card-title">Thêm mới sản phẩm</div>
                         </div>
-                        <form id="create-product-form" action="{{ route('admin.product.store-product') }}" method="post" enctype="multipart/form-data">
+                        <form id="create-product-form" action="{{ route('admin.product.store') }}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -49,33 +50,65 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="title">Tiêu đề</label>
+                                            <label for="sub_title">Tiêu đề phụ</label>
                                             <span class="text-danger">*</span>
-                                            <input class="form-control" type="text" id="title" name="title"
-                                                placeholder="Nhập tiêu đề" value="{{ old('title') }}">
-                                            @if ($errors->has('title'))
+                                            <input class="form-control" type="text" id="sub_title" name="sub_title"
+                                                placeholder="Nhập tiêu đề" value="{{ old('sub_title') }}">
+                                            @if ($errors->has('sub_title'))
                                                 <span class="text-danger">
-                                                    {{ $errors->first('title') }}
+                                                    {{ $errors->first('sub_title') }}
                                                 </span>
                                             @endif
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="brand_id">Hãng</label>
+                                            <label for="sim_card">Sim thẻ</label>
                                             <span class="text-danger">*</span>
-                                            <select class="form-select" id="brand_id" name="brand_id">
-                                                <option value="" hidden selected disabled>Chọn hãng</option>
-                                                @foreach ($brands as $brand)
-                                                    <option value="{{ $brand->id }}"
-                                                        {{ $brand->id == old('brand_id') ? 'selected' : '' }}>
-                                                        {{ $brand->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @if ($errors->has('brand_id'))
+                                            <input class="form-control" type="text" id="sim_card" name="sim_card"
+                                                placeholder="Nhập sim thẻ" value="{{ old('sim_card') }}">
+                                            @if ($errors->has('sim_card'))
                                                 <span class="text-danger">
-                                                    {{ $errors->first('brand_id') }}
+                                                    {{ $errors->first('sim_card') }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="cpu">CPU</label>
+                                            <span class="text-danger">*</span>
+                                            <input class="form-control" type="text" id="cpu" name="cpu"
+                                                placeholder="Nhập CPU" value="{{ old('cpu') }}">
+                                            @if ($errors->has('cpu'))
+                                                <span class="text-danger">
+                                                    {{ $errors->first('cpu') }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="pin">Dung lượng pin</label>
+                                            <span class="text-danger">*</span>
+                                            <input class="form-control" type="text" id="pin" name="pin"
+                                                placeholder="Nhập dung lượng pin" value="{{ old('pin') }}">
+                                            @if ($errors->has('pin'))
+                                                <span class="text-danger">
+                                                    {{ $errors->first('pin') }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="design_style">Kiểu thiết kế</label>
+                                            <span class="text-danger">*</span>
+                                            <input class="form-control" type="text" id="design_style" name="design_style"
+                                                placeholder="Nhập kiểu thiết kế" value="{{ old('design_style') }}">
+                                            @if ($errors->has('design_style'))
+                                                <span class="text-danger">
+                                                    {{ $errors->first('design_style') }}
                                                 </span>
                                             @endif
                                         </div>
@@ -100,11 +133,25 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="screen_resolution">Độ phân giải</label>
+                                            <span class="text-danger">*</span>
+                                            <input class="form-control" type="text" id="screen_resolution"
+                                                name="screen_resolution" placeholder="Nhập độ phân giải"
+                                                value="{{ old('screen_resolution') }}">
+                                            @if ($errors->has('screen_resolution'))
+                                                <span class="text-danger">
+                                                    {{ $errors->first('screen_resolution') }}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="description">Mô tả</label>
                                             <span class="text-danger">*</span>
-                                            <textarea name="description" id="description" class="form-control" rows="5"></textarea>
+                                            <textarea name="description" id="description" class="form-control" rows="5">{{ old('description') }}</textarea>
                                             @if ($errors->has('description'))
                                                 <span class="text-danger">
                                                     {{ $errors->first('description') }}

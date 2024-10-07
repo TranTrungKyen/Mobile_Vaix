@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->string('url')->nullable()->change();
-            $table->softDeletes(); 
+            $table->softDeletes();
         });
     }
 

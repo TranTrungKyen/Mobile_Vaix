@@ -12,14 +12,15 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
-        'name', 
-        'description', 
-        'sim_card', 
-        'cpu', 
-        'pin', 
-        'design_style', 
-        'screen_resolution', 
-        'category_id'
+        'name',
+        'description',
+        'sim_card',
+        'cpu',
+        'pin',
+        'design_style',
+        'screen_resolution',
+        'sub_title',
+        'category_id',
     ];
 
     public function category()

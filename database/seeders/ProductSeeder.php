@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +42,7 @@ class ProductSeeder extends Seeder
                 'design_style' => 'Compact',
                 'screen_resolution' => '1280x800 pixels',
                 'category_id' => 3,
-            ]
+            ],
         ]);
     }
 }

@@ -61,12 +61,12 @@
                                                 </td>
                                                 <td>{{ $item->updated_at }}</td>
                                                 <td>
-                                                    {{-- <div class="d-flex">
+                                                    <div class="d-flex">
                                                         <a class="btn shadow-none"
                                                             href="{{ route('admin.product.detail', ['id' => $item->id] ) }}">
                                                             <i class="fa-solid fa-eye"></i>
                                                         </a>
-                                                        <button type="button" class="btn p-1 shadow-none me-1 toggle-active-js"
+                                                        {{-- <button type="button" class="btn p-1 shadow-none me-1 toggle-active-js"
                                                             data-bs-toggle="modal" data-bs-target="#exampleModal"
                                                             data-name="{{ $item->name }}"
                                                             data-route="{{ route('admin.product.active', ['id' => $item->id]) }}"
@@ -83,8 +83,8 @@
                                                             data-name="{{ $item->name }}"
                                                             data-route="{{ route('admin.product.delete', ['id' => $item->id]) }}">
                                                             <i class="fa-solid fa-trash"></i>
-                                                        </button>
-                                                    </div>   --}}
+                                                        </button> --}}
+                                                    </div>  
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -9,7 +9,9 @@ use Illuminate\View\Component;
 class StarRating extends Component
 {
     public $rating;
+
     public $reviewCount;
+
     /**
      * Create a new component instance.
      */

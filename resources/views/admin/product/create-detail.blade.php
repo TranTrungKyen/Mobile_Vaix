@@ -40,11 +40,11 @@
                         <div class="card-header">
                             <div class="card-title">Thêm chi tiết sản phẩm</div>
                         </div>
-                        <form id="create-product-details-form" action="{{ route('admin.product.store') }}" method="post" enctype="multipart/form-data">
+                        <form id="create-product-details-form" action="{{ route('admin.product.store-detail') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="color_id">Màu sắc</label>
                                             <span class="text-danger">*</span>
@@ -73,7 +73,7 @@
                                                 @foreach ($storages as $storage)
                                                     <option value="{{ $storage->id }}"
                                                         {{ $storage->id == old('storage_id') ? 'selected' : '' }}>
-                                                        {{ $storage->storage }}
+                                                        {{ $storage->name }}
                                                     </option>
                                                 @endforeach
                                             </select>
@@ -86,18 +86,6 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="imei">Mã imei:</label>
-                                            <span class="text-danger">*</span>
-                                            <input type="number" class="form-control" name="imei[]" id="imei">
-                                            @if ($errors->has('imei.0'))
-                                                <span class="text-danger">
-                                                    {{ $errors->first('imei.0') }}
-                                                </span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group">
                                             <label for="qty">Số lượng</label>
                                             <span class="text-danger">*</span>
                                             <input type="number" class="form-control" name="qty[]" id="qty">
@@ -108,7 +96,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="price">Giá</label>
                                             <span class="text-danger">*</span>

@@ -28,7 +28,6 @@ trait RepositoryTraits
         if ($model) {
             return $this->parserResult($model);
         }
-
     }
 
     /**
@@ -52,7 +51,6 @@ trait RepositoryTraits
         if ($model) {
             return $this->parserResult($model);
         }
-
     }
 
     public function multiDelete($ids, $relationship = [])
@@ -70,7 +68,6 @@ trait RepositoryTraits
         if ($model) {
             return $this->parserResult($model);
         }
-
     }
 
     /**
@@ -262,7 +259,6 @@ trait RepositoryTraits
         if ($model) {
             return $this->parserResult($model);
         }
-
     }
 
     public function find($id, $columns = ['*'])
