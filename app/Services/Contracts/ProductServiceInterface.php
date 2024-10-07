@@ -12,4 +12,6 @@ interface ProductServiceInterface
     public function store($data);
 
     public function find($id);
+
+    public function delete($id);
 }

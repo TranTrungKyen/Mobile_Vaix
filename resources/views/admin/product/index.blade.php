@@ -77,13 +77,13 @@
                                                                 ];
                                                             @endphp
                                                             <i class="{{ $iconActive }}"></i>
-                                                        </button>
+                                                        </button> --}}
                                                         <button class="btn shadow-none toggle-delete-js" data-bs-toggle="modal"
                                                             data-bs-target="#exampleModal"
                                                             data-name="{{ $item->name }}"
                                                             data-route="{{ route('admin.product.delete', ['id' => $item->id]) }}">
                                                             <i class="fa-solid fa-trash"></i>
-                                                        </button> --}}
+                                                        </button>
                                                     </div>  
                                                 </td>
                                             </tr>

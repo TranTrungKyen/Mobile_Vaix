@@ -38,5 +38,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/create/detail', [AdminProductController::class, 'createDetail'])->name('create-detail');
         Route::post('/store/detail', [AdminProductController::class, 'storeDetail'])->name('store-detail');
         Route::get('/detail/{id}', [AdminProductController::class, 'detail'])->name('detail');
+        Route::post('/delete/{id}', [AdminProductController::class, 'delete'])->name('delete');
     });
 });
