@@ -135,7 +135,7 @@
                                                     value="{{ $item->id }}" hidden>
                                                 <label for="color_id">Màu sắc</label>
                                                 <span class="text-danger">*</span>
-                                                <select class="form-select" name="color_id[]" disabled>
+                                                <select class="form-select disabled" name="color_id[]">
                                                     <option value="" hidden selected hidden>Chọn màu sắc</option>
                                                     @foreach ($colors as $color)
                                                         <option value="{{ $color->id }}"
@@ -150,7 +150,7 @@
                                             <div class="form-group">
                                                 <label for="storage_id">Dung lượng</label>
                                                 <span class="text-danger">*</span>
-                                                <select class="form-select" name="storage_id[]" disabled>
+                                                <select class="form-select disabled" name="storage_id[]">
                                                     <option value="" hidden selected hidden>Chọn dung lượng
                                                     </option>
                                                     @foreach ($storages as $storage)

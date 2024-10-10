@@ -21,7 +21,7 @@
                                 <table id="basic-datatables" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>STT</th>
+                                            <th>Mã</th>
                                             <th>Tên</th>
                                             <th>Danh mục</th>
                                             <th>Độ phân giải</th>
@@ -34,7 +34,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>STT</th>
+                                            <th>Mã</th>
                                             <th>Tên</th>
                                             <th>Danh mục</th>
                                             <th>Độ phân giải</th>
@@ -48,7 +48,7 @@
                                     <tbody>
                                         @foreach ($products as $index => $item)
                                             <tr data-id="{{ $item->id }}">
-                                                <td>{{ ++$index }}</td>
+                                                <td>{{ $item->id }}</td>
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->category->name ?? '' }}</td>
                                                 <td>{{ $item->screen_resolution }}</td>
@@ -96,13 +96,13 @@
                         <div class="modal-header">
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="#" method="post">
+                        <form id="product-form-js" action="#" method="post">
                             @csrf
                             <div class="modal-body">
 
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-danger">Chắc chắn</button>
+                                <button type="submit" class="btn btn-danger btn-submit">Chắc chắn</button>
                             </div>
                         </form>
                     </div>

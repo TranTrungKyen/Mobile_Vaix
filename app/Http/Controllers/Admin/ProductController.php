@@ -81,7 +81,6 @@ class ProductController extends Controller
     {
         $notification = [
             'status' => false,
-            'redrirectRoute' => route('admin.product.create-detail'),
             'message' => __('content.common.notify_message.error.add'),
         ];
         DB::beginTransaction();
@@ -94,7 +93,7 @@ class ProductController extends Controller
             if ($productId && $isStoreDetailsSuccess && $isStoreImagesSuccess) {
                 $notification = [
                     'status' => true,
-                    'redrirectRoute' => route('admin.product.index'),
+                    'redirectRoute' => route('admin.product.index'),
                     'message' => __('content.common.notify_message.success.add'),
                 ];
             }
@@ -115,15 +114,21 @@ class ProductController extends Controller
 
     public function delete($id)
     {
+        $notification = [
+            'status' => false,
+            'message' => __('content.common.notify_message.error.delete'),
+        ];
         try {
             $this->productService->delete($id);
+            $notification = [
+                'status' => true,
+                'message' => __('content.common.notify_message.success.delete'),
+            ];
         } catch (\Exception $e) {
             Log::info($e->getMessage());
-
-            return redirect()->route('admin.product.index')->with('error', __('content.common.notify_message.error.delete'));
         }
 
-        return redirect()->route('admin.product.index')->with('success', __('content.common.notify_message.success.delete'));
+        return response()->json($notification);
     }
 
     public function update(AdminUpdateProductRequest $request, $id)
