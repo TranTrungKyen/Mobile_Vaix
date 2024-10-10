@@ -1,4 +1,7 @@
 @extends('layouts.admin.master-layout')
+@push('style')
+    <link href="{{ asset('css/admin/product/detail.css') }}" rel="stylesheet" />
+@endpush
 @section('content')
     <div class="container">
         <div class="page-inner">
@@ -162,17 +165,17 @@
                             <div class="list-images">
                                 <div class="container mx-0">
                                     <p class="card-title mb-2">Ảnh sản phẩm</p>
-                                    <div class="row row-cols-4 row-cols-md-6 g-4">
-                                        @foreach ($product->images as $item)
-                                            <div class="col">
-                                                <img src="{{ asset($item->url) }}" class="img-fluid" alt="Image {{ $item->id }}">
-                                            </div>
-                                        @endforeach
-                                        @if(count($product->images) == 0)
-                                            <p> Chưa có ảnh nào </p>
-                                        @endif
-                                    </div>
-                                  </div>
+                                <div class="row row-cols-4 row-cols-md-6 g-4">
+                                    @foreach ($product->images as $item)
+                                        <div class="col">
+                                            <img src="{{ asset($item->url) }}" class="img-fluid"
+                                                alt="Image {{ $item->id }}">
+                                        </div>
+                                    @endforeach
+                                    @if (count($product->images) == 0)
+                                        <p> Chưa có ảnh nào </p>
+                                    @endif
+                                </div>
                             </div>
                             <div class="product-details mt-4">
                                 <div class="card">
@@ -207,7 +210,8 @@
                                                             <td>{{ $item->color->name }}</td>
                                                             <td>{{ $item->storage->name }}</td>
                                                             <td>{{ $item->quantity }}</td>
-                                                            <td class="price-js--vi" data-amount="{{ $item->price }}">{{ $item->price }}</td>
+                                                            <td class="price-js--vi" data-amount="{{ $item->price }}">
+                                                                {{ $item->price }}</td>
                                                         </tr>
                                                     @endforeach
                                                 </tbody>

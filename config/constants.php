@@ -34,3 +34,5 @@ const ORDER_STATUS = [
 ];
 
 const ORDER_CANCELED = 'CANCELED';
+
+const MAX_QTY_IMAGE_PRODUCT = 5;

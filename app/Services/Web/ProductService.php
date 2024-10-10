@@ -5,7 +5,6 @@ namespace App\Services\Web;
 use App\Repositories\Contracts\ProductRepository;
 use App\Services\Contracts\ProductServiceInterface;
 use App\Traits\FileTrait;
-use Faker\Core\File;
 
 /**
  * Class ProductService.
@@ -48,6 +47,24 @@ class ProductService implements ProductServiceInterface
             }
         }
         $this->traitDelete($images);
+
         return $this->repository->delete($id);
+    }
+
+    public function update($request, $id)
+    {
+        $data = [
+            'name' => $request->name,
+            'description' => $request->description,
+            'sim_card' => $request->sim_card,
+            'cpu' => $request->cpu,
+            'pin' => $request->pin,
+            'design_style' => $request->design_style,
+            'screen_resolution' => $request->screen_resolution,
+            'category_id' => $request->category_id,
+            'sub_title' => $request->sub_title,
+        ];
+
+        return $this->repository->update($data, $id);
     }
 }

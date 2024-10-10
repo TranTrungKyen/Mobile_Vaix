@@ -33,10 +33,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::prefix('product')->name('product.')->group(function () {
         Route::get('/', [AdminProductController::class, 'index'])->name('index');
-        Route::get('/create', [AdminProductController::class, 'create'])->name('create');
+        Route::get('/create/{id?}', [AdminProductController::class, 'create'])->name('create');
         Route::post('/store', [AdminProductController::class, 'store'])->name('store');
-        Route::get('/create/detail', [AdminProductController::class, 'createDetail'])->name('create-detail');
+        Route::get('/create-detail/{id?}', [AdminProductController::class, 'createDetail'])->name('create-detail');
         Route::post('/store/detail', [AdminProductController::class, 'storeDetail'])->name('store-detail');
+        Route::post('/update/{id}/detail', [AdminProductController::class, 'updateDetail'])->name('update-detail');
+        Route::post('/update/{id}', [AdminProductController::class, 'update'])->name('update');
         Route::get('/detail/{id}', [AdminProductController::class, 'detail'])->name('detail');
         Route::post('/delete/{id}', [AdminProductController::class, 'delete'])->name('delete');
     });

@@ -66,18 +66,10 @@
                                                             href="{{ route('admin.product.detail', ['id' => $item->id] ) }}">
                                                             <i class="fa-solid fa-eye"></i>
                                                         </a>
-                                                        {{-- <button type="button" class="btn p-1 shadow-none me-1 toggle-active-js"
-                                                            data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                                            data-name="{{ $item->name }}"
-                                                            data-route="{{ route('admin.product.active', ['id' => $item->id]) }}"
-                                                            data-active="{{ $item->active }}">
-                                                            @php
-                                                                $iconActive = __('content.common.icon')[
-                                                                    $item->active ? 'lock' : 'unlock'
-                                                                ];
-                                                            @endphp
-                                                            <i class="{{ $iconActive }}"></i>
-                                                        </button> --}}
+                                                        <a class="btn shadow-none"
+                                                            href="{{ route('admin.product.create', ['id' => $item->id] ) }}">
+                                                            <i class="fa-regular fa-pen-to-square"></i>
+                                                        </a>
                                                         <button class="btn shadow-none toggle-delete-js" data-bs-toggle="modal"
                                                             data-bs-target="#exampleModal"
                                                             data-name="{{ $item->name }}"

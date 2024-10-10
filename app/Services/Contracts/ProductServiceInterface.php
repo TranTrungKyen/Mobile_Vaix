@@ -14,4 +14,6 @@ interface ProductServiceInterface
     public function find($id);
 
     public function delete($id);
+
+    public function update($request, $id);
 }
