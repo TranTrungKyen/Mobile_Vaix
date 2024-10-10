@@ -68,9 +68,16 @@
 }
 
 .img-bg {
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-position: relative;
-padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.disabled {
+    background-color: #e9ecef; 
+    color: #6c757d; 
+    border: 1px solid #ced4da;
+    pointer-events: none; 
 }

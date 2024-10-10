@@ -1,39 +1,62 @@
 $(document).ready(function () {
     $("#basic-datatables").DataTable({});
+    
+    function closeModal () {
+        $('.btn-close').trigger('click');
+    }
 
     function showModalForAction(formModal, element, action) {
         const name = element.attr('data-name');
         const routeAction = element.attr('data-route');
         let contentModalBody = lang.delete_form.body + ' ' + name + '?';
         $(formModal).attr('action', routeAction);
-        if (action == actions[0]) {
-            const isActive = element.attr('data-active');
-            contentModalBody = lang.active_form.body.lock + ' ' + name + '?';
-            if (!isActive) {
-                contentModalBody = lang.active_form.body.unlock + ' ' + name + '?';
-            }
-        }
-        if (action == actions[2]) {
-            contentModalBody = lang.reset_password_form.body + ' ' + name + '?';
-        }
 
         formModal.find('.modal-body:first').text(contentModalBody);
     }
 
     function addEventClickShowModal(classBtns, action = 'delete') {
-        $('#basic-datatables').on('click', classBtns, function () {
+        $('#basic-datatables').on('click', classBtns, function (event) {
             showModalForAction(formModal, $(this), action);
+
+            if (action == 'delete') {
+                rowCurrent = $(this).closest('tr');
+            }
         });
     }
 
     const classDeleteBtns = '.toggle-delete-js';
-    const classActiveBtns = '.toggle-active-js';
     const formModal = $('#container-modal form');
-    const actions = [
-        'active',
-        'delete',
-        'reset password',
-    ];
+    let rowCurrent;
     addEventClickShowModal(classDeleteBtns);
-    addEventClickShowModal(classActiveBtns, 'active');
+
+    formModal.submit(function (e) {
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+        let form = new FormData(this);
+        let actionUrl = $(this).attr('action');
+
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            data: form,
+            processData: false,
+            contentType: false, 
+            success: function (data) {
+                if (data.status) {
+                    toastr.success(data.message);
+                    rowCurrent.fadeOut();
+                } else {
+                    toastr.error(data.message);
+                }
+            },
+            error: function (errors) {
+                if (errors.hasOwnProperty("responseJSON") && errors.responseJSON.errors) {
+                    let messages = errors.responseJSON.errors;
+                    showToastrErrors(messages)
+                }
+            },
+            complete: function () {
+                closeModal();
+            }
+        });
+    });
 });
