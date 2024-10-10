@@ -34,4 +34,7 @@ class ProductDetail extends Model
     {
         return $this->belongsTo(Storage::class);
     }
+
+    // Automatically update the 'updated_at' field of the related Product
+    protected $touches = ['product'];
 }
