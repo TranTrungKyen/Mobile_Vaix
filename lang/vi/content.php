@@ -2,6 +2,28 @@
 
 return [
     'common' => [
+        'page' => [
+            'header' => [
+                'product' => [
+                    'create' => 'Thêm mới',
+                    'edit' => 'Chỉnh sửa',
+                ],
+                'product_detail' => [
+                    'create' => 'Thêm mới chi tiết',
+                    'edit' => 'Chỉnh sửa chi tiết',
+                ],
+            ],
+            'card_title' => [
+                'product' => [
+                    'create' => 'Thêm mới sản phẩm',
+                    'edit' => 'Chỉnh sửa sản phẩm',
+                ],
+                'product_detail' => [
+                    'create' => 'Thêm mới chi tiết sản phẩm',
+                    'edit' => 'Chỉnh sửa chi tiết sản phẩm',
+                ],
+            ],
+        ],
         'order_status' => [
             'PENDING' => 'Chờ xác nhận',
             'SHIPPING' => 'Đang giao',
@@ -35,6 +57,7 @@ return [
             'register' => 'Đăng ký',
             'next' => 'Tiếp theo',
             'add' => 'Thêm',
+            'update' => 'Cập nhật',
         ],
         'link' => [
             'forgot_password' => 'Quên mật khẩu',
@@ -257,7 +280,7 @@ return [
                     'required' => 'Vui lòng nhập lại dung lượng pin sản phẩm',
                     'max' => 'Vui lòng nhập lại dung lượng pin không quá :max ký tự',
                 ],
-                'design_stype' => [
+                'design_style' => [
                     'required' => 'Vui lòng nhập lại kiểu thiết kế sản phẩm',
                     'max' => 'Vui lòng nhập lại kiểu thiết kế không quá :max ký tự',
                 ],
@@ -328,6 +351,17 @@ return [
                 'end_date' => [
                     'required' => 'Vui lòng nhập lại ngày kết thúc',
                     'after' => 'Vui lòng nhập lại ngày kết thúc phải sau ngày bắt đầu',
+                ],
+            ],
+            'update_product_image_form' => [
+                'deleteIds' => [
+                    'required_without' => 'Vui lòng cập nhật ảnh',
+                ],
+                'product_images' => [
+                    'required_without' => 'Vui lòng cập nhật ảnh',
+                    'max' => 'Vui lòng nhập chọn ảnh không quá :max kb',
+                    'mimes' => 'Vui lòng nhập chọn ảnh đúng định dạng',
+                    'image' => 'Vui lòng nhập chọn ảnh đúng định dạng',
                 ],
             ],
         ],

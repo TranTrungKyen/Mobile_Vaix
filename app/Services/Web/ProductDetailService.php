@@ -43,4 +43,35 @@ class ProductDetailService implements ProductDetailServiceInterface
 
         return true;
     }
+
+    public function updateOrCreateMultiple($request, $productId)
+    {
+        foreach ($request->color_id as $key => $color_id) {
+            if (!empty($request->product_detail_id[$key])) {
+                $data = [
+                    'quantity' => $request->qty[$key],
+                    'price' => $request->price[$key],
+                ];
+
+                $this->repository->update($data, $request->product_detail_id[$key]);
+            } else {
+                $data = [
+                    'product_id' => $productId,
+                    'color_id' => $color_id,
+                    'storage_id' => $request->storage_id[$key],
+                    'quantity' => $request->qty[$key],
+                    'price' => $request->price[$key],
+                ];
+
+                $this->repository->create($data);
+            }
+        }
+
+        return true;
+    }
+
+    public function delete($id)
+    {
+        return $this->repository->delete($id);
+    }
 }

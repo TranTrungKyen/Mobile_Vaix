@@ -7,5 +7,9 @@ namespace App\Services\Contracts;
  */
 interface ImageServiceInterface
 {
+    public function delete($id);
+
+    public function deleteMultiple($arrIds);
+
     public function storeMultiple($request, $productId);
 }

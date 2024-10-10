@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Log;
  */
 class ImageService implements ImageServiceInterface
 {
-    use FileTrait;
+    use FileTrait {
+        delete as traitDelete;
+    }
 
     protected $repository;
 
@@ -25,6 +27,25 @@ class ImageService implements ImageServiceInterface
     ) {
         $this->repository = $repository;
         $this->productRepository = $productRepository;
+    }
+
+    public function delete($id)
+    {
+        $image = $this->repository->find($id);
+        if ($this->exists($image->url) && !is_dir($image->url)) {
+            $this->traitDelete([$image->url]);
+        }
+
+        return $this->repository->delete($id);
+    }
+
+    public function deleteMultiple($arrIds)
+    {
+        foreach ($arrIds as $id) {
+            $this->delete($id);
+        }
+
+        return true;
     }
 
     public function storeMultiple($request, $productId)

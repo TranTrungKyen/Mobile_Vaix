@@ -4,26 +4,6 @@ $(document).ready(function () {
     const stopPreventDefaultElements = $('.stop-prevent-default-js--click');
 
     const app = {
-        scrollTop: function () {
-            const scrollToTopButton = document.getElementById('scrollToTop');
-        
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 100) {
-                    scrollToTopButton.classList.add('show');
-                } else {
-                    scrollToTopButton.classList.remove('show');
-                }
-            });
-        
-            scrollToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-        },
-
         autoTrimInputsJs: function () {
             $('.auto-trim-js').on('input change', function () {
                 let autoTrimInputs= document.querySelectorAll('.auto-trim-js');
@@ -68,7 +48,6 @@ $(document).ready(function () {
             this.stopPreventDefaultOnClick(stopPreventDefaultElements);
             formatAllPriceViElement();
             getSuccessMessageInLocalStorage();
-            this.scrollTop();
         }
     }
 
