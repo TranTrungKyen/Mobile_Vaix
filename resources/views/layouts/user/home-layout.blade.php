@@ -25,51 +25,15 @@
             <div class="row">
                 <div class="col-md-3">
                     <nav class="list-group font-size-14">
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="menu-text">iPhone</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-tablet-alt"></i></span>
-                            <span class="menu-text">iPad</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="menu-text">Apple Watch</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="menu-text">Xiaomi</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="menu-text">Samsung</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="menu-text">realme</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-mobile-alt"></i></span>
-                            <span class="menu-text">VSmart</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-headphones"></i></span>
-                            <span class="menu-text">Phụ kiện - Đồ chơi</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action menu-item">
-                            <span class="menu-icon"><i class="fas fa-newspaper"></i></span>
-                            <span class="menu-text">Tin tức</span>
-                            <span class="chevron"><i class="fas fa-chevron-right"></i></span>
-                        </a>
+                        <x-category-item icon="fas fa-mobile-alt" text="IPhone" link="#"></x-category-item>
+                        <x-category-item icon="fas fa-tablet-alt" text="iPad" link="#"></x-category-item>
+                        <x-category-item icon="fas fa-mobile-alt" text="Apple Watch" link="#"></x-category-item>
+                        <x-category-item icon="fas fa-mobile-alt" text="Xiaomi" link="#"></x-category-item>
+                        <x-category-item icon="fas fa-mobile-alt" text="Samsung" link="#"></x-category-item>
+                        <x-category-item icon="fas fa-mobile-alt" text="Realme" link="#"></x-category-item>
+                        <x-category-item icon="fas fa-mobile-alt" text="VSmart" link="#"></x-category-item>
+                        <x-category-item icon="fa fa-gamepad" text="Phụ kiện - Đồ chơi" link="#"></x-category-item>
+                        <x-category-item icon="fa-solid fa-newspaper" text="Tin tức" link="#"></x-category-item>
                     </nav>
                 </div>
                 <div class="col-md-6">

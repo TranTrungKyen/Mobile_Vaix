@@ -19,32 +19,32 @@ use Illuminate\Support\Facades\Route;
 Route::name('user.')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('home');
 
-    Route::prefix('product')->name('product.')->group(function () {
-        Route::get('/', [ProductController::class, 'index'])->name('index');
-        Route::get('/detail', [ProductController::class, 'detail'])->name('detail');
+    Route::prefix('product')->name('product.')->controller(ProductController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/detail', 'detail')->name('detail');
     });
 });
 
 Route::middleware('authAdmin')->prefix('admin')->name('admin.')->group(function () {
-    Route::middleware('guest')->withoutMiddleware('authAdmin')->group(function () {
-        Route::get('/login', [AdminController::class, 'login'])->name('login');
-        Route::post('/login', [AdminController::class, 'postLogin'])->name('post-login');
+    Route::middleware('guest')->withoutMiddleware('authAdmin')->controller(AdminController::class)->group(function () {
+        Route::get('/login', 'login')->name('login');
+        Route::post('/login', 'postLogin')->name('post-login');
     });
 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
-    Route::prefix('product')->name('product.')->group(function () {
-        // Route::get('/', [AdminProductController::class, 'index'])->name('index');
-        Route::get('/', [AdminProductController::class, 'listDetail'])->name('index');
-        Route::get('/getData', [AdminProductController::class, 'getData'])->name('get-data');
-        Route::get('/getDataDetail', [AdminProductController::class, 'getDataDetail'])->name('get-data-detail');
-        Route::get('/create/{id?}', [AdminProductController::class, 'create'])->name('create');
-        Route::post('/store', [AdminProductController::class, 'store'])->name('store');
-        Route::get('/create-detail/{id?}', [AdminProductController::class, 'createDetail'])->name('create-detail');
-        Route::post('/store/detail', [AdminProductController::class, 'storeDetail'])->name('store-detail');
-        Route::post('/update/{id}/detail', [AdminProductController::class, 'updateDetail'])->name('update-detail');
-        Route::post('/update/{id}', [AdminProductController::class, 'update'])->name('update');
-        Route::get('/detail/{id}', [AdminProductController::class, 'detail'])->name('detail');
-        Route::post('/delete/{id}', [AdminProductController::class, 'delete'])->name('delete');
+    Route::prefix('product')->name('product.')->controller(AdminProductController::class)->group(function () {
+        // Route::get('/', 'index')->name('index');
+        Route::get('/', 'listDetail')->name('index');
+        Route::get('/getData', 'getData')->name('get-data');
+        Route::get('/getDataDetail', 'getDataDetail')->name('get-data-detail');
+        Route::get('/create/{id?}', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/create-detail/{id?}', 'createDetail')->name('create-detail');
+        Route::post('/store/detail', 'storeDetail')->name('store-detail');
+        Route::post('/update/{id}/detail', 'updateDetail')->name('update-detail');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/detail/{id}', 'detail')->name('detail');
+        Route::post('/delete/{id}', 'delete')->name('delete');
     });
 });
