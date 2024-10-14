@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\ActiveProductScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -9,6 +10,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProductDetail extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected static function booted()
+    {
+        static::addGlobalScope(new ActiveProductScope);
+    }
 
     protected $table = 'product_details';
 

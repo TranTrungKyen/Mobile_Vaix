@@ -23,10 +23,9 @@
                                         <tr>
                                             <th rowspan="2">Mã</th>
                                             <th rowspan="2">Tên</th>
-                                            <th colspan="2" class="text-center">Danh mục</th>
-                                            <th rowspan="2">Kiểu thiết kế</th>
-                                            <th rowspan="2">Pin</th>
-                                            <th rowspan="2">Mô tả</th>
+                                            <th colspan="2" class="text-center">Màu sắc và dung lượng</th>
+                                            <th rowspan="2">Số lượng còn</th>
+                                            <th rowspan="2">Giá</th>
                                             <th rowspan="2">Ngày cập nhật</th>
                                             <th rowspan="2">Hành động</th>
                                         </tr>
@@ -38,6 +37,18 @@
                                     <tbody>
 
                                     </tbody>
+                                    <tfoot class="d-none">
+                                        <tr>
+                                            <th>Mã</th>
+                                            <th>Tên</th>
+                                            <th>Màu sắc</th>
+                                            <th>Dung lượng</th>
+                                            <th>Số lượng còn</th>
+                                            <th>Giá</th>
+                                            <th>Ngày cập nhật</th>
+                                            <th>Hành động</th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
@@ -70,7 +81,7 @@
 @endsection
 @push('scripts')
     <script>
-        const routeGetData = @json(route('admin.product.get-data'));
+        const routeGetData = @json(route('admin.product.get-data-detail'));
     </script>
-    <script src="{{ asset('js/admin/product/list-product.js') }}"></script>
+    <script src="{{ asset('js/admin/product/list-detail.js') }}"></script>
 @endpush

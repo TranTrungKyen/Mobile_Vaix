@@ -7,7 +7,7 @@ namespace App\Services\Contracts;
  */
 interface ProductServiceInterface
 {
-    public function all();
+    public function all($relationship = []);
 
     public function store($data);
 
@@ -16,4 +16,12 @@ interface ProductServiceInterface
     public function delete($id);
 
     public function update($request, $id);
+
+    public function paginateByFilters(
+        $filters = [],
+        $pageSize = 10,
+        $relationship = [],
+        $orderBy = ['id' => 'desc'],
+        $columns = '*'
+    );
 }

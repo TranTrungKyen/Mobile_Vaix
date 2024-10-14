@@ -15,6 +15,7 @@ use App\Services\Contracts\ProductServiceInterface;
 use App\Services\Web\StorageService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
 {
@@ -48,9 +49,74 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->productService->all();
+        return view('admin.product.index');
+    }
 
-        return view('admin.product.index', ['products' => $products]);
+    public function listDetail()
+    {
+        return view('admin.product.list-detail');
+    }
+
+    public function getDataDetail()
+    {
+        $relationship = ['product', 'color', 'storage'];
+        $productDetails = $this->productDetailService->all($relationship);
+
+        return DataTables::of($productDetails)
+            ->editColumn('product.updated_at', function ($row) {
+                return formatDate('d/m/Y', $row->updated_at);
+            })
+            ->addColumn('actions', function ($row) {
+                return '<div class="d-flex">
+                            <a class="btn shadow-none"
+                                href="' . route('admin.product.detail', ['id' => $row->product_id]) . '">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a class="btn shadow-none"
+                                href="' . route('admin.product.create', ['id' => $row->product_id]) . '">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            <button class="btn shadow-none toggle-delete-js" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                                data-name="' . $row->product?->name . '"
+                                data-route="' . route('admin.product.delete', ['id' => $row->product_id]) . '">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>';
+            })
+            ->rawColumns(['actions'])
+            ->make(true);
+    }
+
+    public function getData()
+    {
+        $relationship = ['category'];
+        $products = $this->productService->all($relationship);
+
+        return DataTables::of($products)
+            ->editColumn('updated_at', function ($row) {
+                return formatDate('d/m/Y', $row->updated_at);
+            })
+            ->addColumn('actions', function ($row) {
+                return '<div class="d-flex">
+                            <a class="btn shadow-none"
+                                href="' . route('admin.product.detail', ['id' => $row->id]) . '">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a class="btn shadow-none"
+                                href="' . route('admin.product.create', ['id' => $row->id]) . '">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                            <button class="btn shadow-none toggle-delete-js" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                                data-name="' . $row->name . '"
+                                data-route="' . route('admin.product.delete', ['id' => $row->id]) . '">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>';
+            })
+            ->rawColumns(['actions'])
+            ->make(true);
     }
 
     public function create($id = null)

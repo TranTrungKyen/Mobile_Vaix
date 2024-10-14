@@ -7,6 +7,8 @@ namespace App\Services\Contracts;
  */
 interface ProductDetailServiceInterface
 {
+    public function all($relationship = []);
+
     public function storeMultiple($dataProductDetailForm, $productId);
 
     public function updateOrCreateMultiple($request, $productId);

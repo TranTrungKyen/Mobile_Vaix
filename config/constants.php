@@ -36,3 +36,5 @@ const ORDER_STATUS = [
 const ORDER_CANCELED = 'CANCELED';
 
 const MAX_QTY_IMAGE_PRODUCT = 5;
+
+const FORMAT_DATE_TIME = 'Y-m-d H:i:s';

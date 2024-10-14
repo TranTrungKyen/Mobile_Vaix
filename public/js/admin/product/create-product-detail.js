@@ -153,6 +153,7 @@ $(document).ready(function () {
         });
     }
 
+    let isProcessing = false;
     // this is the id of the form
     $("#product-details-form").submit(function (e) {
         e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -160,7 +161,11 @@ $(document).ready(function () {
         appendElementToArrayOfForm(imgDeletedIds, 'imgDeletedIds', form);
         appendElementToArrayOfForm(productDetailDeletedIds, 'productDetailDeletedIds', form);
         let actionUrl = $(this).attr('action');
-
+        if(isProcessing) {
+            toastr.error('Đang xử lý yêu cầu');
+            return;
+        }
+        isProcessing = true;
         $.ajax({
             type: "POST",
             url: actionUrl,
@@ -180,8 +185,8 @@ $(document).ready(function () {
                     let messages = errors.responseJSON.errors;
                     showToastrErrors(messages)
                 }
-            }
+                isProcessing = false;
+            },
         });
-
     });
 });
