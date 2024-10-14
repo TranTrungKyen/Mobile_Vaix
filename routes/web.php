@@ -25,9 +25,11 @@ Route::name('user.')->group(function () {
     });
 });
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/login', [AdminController::class, 'login'])->name('login');
-    Route::post('/login', [AdminController::class, 'postLogin'])->name('post-login');
+Route::middleware('authAdmin')->prefix('admin')->name('admin.')->group(function () {
+    Route::middleware('guest')->withoutMiddleware('authAdmin')->group(function () {
+        Route::get('/login', [AdminController::class, 'login'])->name('login');
+        Route::post('/login', [AdminController::class, 'postLogin'])->name('post-login');
+    });
 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
