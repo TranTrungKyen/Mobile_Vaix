@@ -90,6 +90,7 @@ return [
                 'order_confirm' => 'Xác nhận đơn hàng thất bại',
                 'order_cancel' => 'Hủy đơn hàng thất bại',
                 'statistical' => 'Thống kê doanh thu thất bại',
+                'null_product_info' => 'Vui lòng nhập từ thêm mới sản phẩm',
             ],
         ],
         'icon' => [

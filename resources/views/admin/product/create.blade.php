@@ -32,7 +32,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">{{ __('content.common.page.card_title.product_detail')[$namePage] }}</div>
+                            <div class="card-title">{{ __('content.common.page.card_title.product')[$namePage] }}</div>
                         </div>
                         <form id="product-form" 
                             method="post"

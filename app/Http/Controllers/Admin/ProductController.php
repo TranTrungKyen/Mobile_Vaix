@@ -152,6 +152,13 @@ class ProductController extends Controller
         DB::beginTransaction();
         try {
             $requestProductForm = $request->session()->get('productForm');
+            if (!$requestProductForm) {
+                $notification = [
+                    'status' => false,
+                    'message' => __('content.common.notify_message.error.null_product_info'),
+                ];
+                return $notification;
+            }
             $productId = $this->productService->store($requestProductForm)->id;
             $isStoreDetailsSuccess = $this->productDetailService->storeMultiple($request, $productId);
             $isStoreImagesSuccess = $this->imageService->storeMultiple($request, $productId);
@@ -162,6 +169,7 @@ class ProductController extends Controller
                     'redirectRoute' => route('admin.product.index'),
                     'message' => __('content.common.notify_message.success.add'),
                 ];
+                session()->forget('productForm');
             }
         } catch (\Exception $e) {
             DB::rollBack();
