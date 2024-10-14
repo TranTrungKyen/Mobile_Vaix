@@ -168,7 +168,10 @@
                                 <div class="row row-cols-4 row-cols-md-6 g-4">
                                     @foreach ($product->images as $item)
                                         <div class="col">
-                                            <img src="{{ asset($item->url) }}" class="img-fluid"
+                                            @php
+                                                $urlImage = file_exists(asset($item->url)) ? asset($item->url) : asset(IMAGE['DEFAULT']);
+                                            @endphp
+                                            <img src="{{ $urlImage }}" class="img-fluid"
                                                 alt="Image {{ $item->id }}">
                                         </div>
                                     @endforeach

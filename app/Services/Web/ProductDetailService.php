@@ -17,9 +17,12 @@ class ProductDetailService implements ProductDetailServiceInterface
         $this->repository = $repository;
     }
 
-    public function all()
+    public function all($relationship = [])
     {
-        return $this->repository->orderBy('updated_at', 'desc')->all();
+        return $this->repository
+            ->with($relationship)
+            ->orderBy('product_id', 'desc')
+            ->all();
     }
 
     public function store($data)

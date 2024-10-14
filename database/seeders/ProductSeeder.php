@@ -22,6 +22,7 @@ class ProductSeeder extends Seeder
                 'design_style' => 'Sleek',
                 'screen_resolution' => '1080x2400 pixels',
                 'category_id' => 1,
+                'sub_title' => 'Mua 1 tặng 1',
             ],
             [
                 'name' => 'Laptop Pro 15',
@@ -32,6 +33,7 @@ class ProductSeeder extends Seeder
                 'design_style' => 'Elegant',
                 'screen_resolution' => '1920x1080 pixels',
                 'category_id' => 2,
+                'sub_title' => 'Mua 1 tặng 2',
             ],
             [
                 'name' => 'Tablet Max 10',
@@ -42,6 +44,7 @@ class ProductSeeder extends Seeder
                 'design_style' => 'Compact',
                 'screen_resolution' => '1280x800 pixels',
                 'category_id' => 3,
+                'sub_title' => 'Mua 1 tặng 3',
             ],
         ]);
     }

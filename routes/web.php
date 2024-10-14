@@ -32,7 +32,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
     Route::prefix('product')->name('product.')->group(function () {
-        Route::get('/', [AdminProductController::class, 'index'])->name('index');
+        // Route::get('/', [AdminProductController::class, 'index'])->name('index');
+        Route::get('/', [AdminProductController::class, 'listDetail'])->name('index');
+        Route::get('/getData', [AdminProductController::class, 'getData'])->name('get-data');
+        Route::get('/getDataDetail', [AdminProductController::class, 'getDataDetail'])->name('get-data-detail');
         Route::get('/create/{id?}', [AdminProductController::class, 'create'])->name('create');
         Route::post('/store', [AdminProductController::class, 'store'])->name('store');
         Route::get('/create-detail/{id?}', [AdminProductController::class, 'createDetail'])->name('create-detail');

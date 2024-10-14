@@ -22,9 +22,22 @@ class ProductService implements ProductServiceInterface
         $this->repository = $repository;
     }
 
-    public function all()
+    public function all($relationship = [])
     {
-        return $this->repository->orderBy('updated_at', 'desc')->all();
+        return $this->repository
+            ->with($relationship)
+            ->orderBy('updated_at', 'desc')
+            ->all();
+    }
+
+    public function paginateByFilters(
+        $filters = [],
+        $pageSize = 10,
+        $relationship = [],
+        $orderBy = ['id' => 'desc'],
+        $columns = '*'
+    ) {
+        return $this->repository->paginateByFilters($filters, $pageSize, $relationship, $orderBy, $columns);
     }
 
     public function store($data)
