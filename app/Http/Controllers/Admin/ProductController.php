@@ -157,6 +157,7 @@ class ProductController extends Controller
                     'status' => false,
                     'message' => __('content.common.notify_message.error.null_product_info'),
                 ];
+
                 return $notification;
             }
             $productId = $this->productService->store($requestProductForm)->id;
