@@ -8,7 +8,6 @@ class RepositoryServiceProvider extends ServiceProvider
 {
     protected $repositories = [
         \App\Repositories\Contracts\ImageRepository::class => \App\Repositories\Eloquent\ImageRepositoryEloquent::class,
-        \App\Repositories\Contracts\ProductImageRepository::class => \App\Repositories\Eloquent\ProductImageRepositoryEloquent::class,
         \App\Repositories\Contracts\ProductDetailRepository::class => \App\Repositories\Eloquent\ProductDetailRepositoryEloquent::class,
         \App\Repositories\Contracts\StorageRepository::class => \App\Repositories\Eloquent\StorageRepositoryEloquent::class,
         \App\Repositories\Contracts\ColorRepository::class => \App\Repositories\Eloquent\ColorRepositoryEloquent::class,

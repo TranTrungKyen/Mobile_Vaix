@@ -24,6 +24,11 @@ class Product extends Model
         'category_id',
     ];
 
+    protected $appends = [
+        'price_original',
+        'image',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -37,5 +42,30 @@ class Product extends Model
     public function productDetails()
     {
         return $this->hasMany(ProductDetail::class);
+    }
+
+    public function getPriceOriginalAttribute()
+    {
+        return $this->productDetails()->min('price');
+    }
+
+    // public function getPriceCurrentAttribute()
+    // {
+    //     $minPriceDetail = $this->productDetails()->orderBy('price', 'asc')->first();
+    //     if (empty($minPriceDetail->productDetailSale)) {
+    //         return;
+    //     }
+    //     $productDetailSaleLastest = $minPriceDetail->productDetailSale()->orderBy('updated_at', 'desc')->first();
+    //     // Check sale deleted or active none
+    //     if (empty($productDetailSaleLastest->sale) || !$productDetailSaleLastest->sale->active) {
+    //         return;
+    //     }
+
+    //     return $productDetailSaleLastest->price;
+    // }
+
+    public function getImageAttribute()
+    {
+        return $this->images()->first()->url ?? '';
     }
 }
