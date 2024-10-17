@@ -24,4 +24,8 @@ interface ProductServiceInterface
         $orderBy = ['id' => 'desc'],
         $columns = '*'
     );
+
+    public function findByField($fieldName, $value);
+
+    public function getAllByFilters($filters = [], $relationship = [], $orderBy = [], $columns = '*');
 }

@@ -7,6 +7,7 @@
 
     --border-radius: 10px;
     --header-height: 66px;
+    --category-height: 40px;
 }
 
 header {
@@ -358,4 +359,18 @@ a:hover {
 
 .separate {
     border-right: 1px solid var(--border-color);
+}
+
+.category-sub {
+    display: none;
+    position: absolute;
+    top: var(--category-height);
+    left: 0;
+    z-index: 9;
+}
+
+.category:hover ~ .category-sub,
+.category-sub:hover
+ {
+    display: block;
 }

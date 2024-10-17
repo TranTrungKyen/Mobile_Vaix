@@ -25,14 +25,10 @@ $(document).ready(function () {
             let indexNameColumn = 1;
             let productNameClass = '.name';
             let productIdClass = '.product-id';
-            let priceOriginClass = '.price-origin';
             let productNameAccess = 'product.name';
             
             // row span if same product name
             api.column(indexNameColumn, { page: 'current' }).data().each(function (value, i) {
-                // colspan field col
-                $(rows).eq(i).find(priceOriginClass).attr('colspan', 2);
-
                 if (lastValue !== value) {
                     lastValue = value;
                     let rowspanCount = api.rows({ page: 'current' }).data().filter(function (item) {

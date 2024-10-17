@@ -50,6 +50,30 @@ class ProductService implements ProductServiceInterface
         return $this->repository->find($id);
     }
 
+    public function findByField($fieldName, $value)
+    {
+        return $this->repository->findByField($fieldName, $value);
+    }
+
+    public function getAllByFilters(
+        $filters = [], 
+        $relationship = [], 
+        $orderBy = [], 
+        $columns = '*'
+        ) {
+        if ($orderBy['price_original'] ?? '') {
+            switch ($orderBy['price_original']) {
+                case 'asc':
+                    return $this->repository->getAllByFilters($filters, $relationship, [], $columns)->sortBy('price_original');
+                case 'desc':
+                    return $this->repository->getAllByFilters($filters, $relationship, [], $columns)->sortByDesc('price_original');
+                default:
+                    break;
+            }
+        }
+        return $this->repository->getAllByFilters($filters, $relationship, $orderBy, $columns);
+    }
+
     public function delete($id)
     {
         $imagesCollection = $this->repository->find($id)->images;

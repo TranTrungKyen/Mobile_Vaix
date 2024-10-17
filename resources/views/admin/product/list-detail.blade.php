@@ -37,18 +37,6 @@
                                     <tbody>
 
                                     </tbody>
-                                    <tfoot class="d-none">
-                                        <tr>
-                                            <th>Mã</th>
-                                            <th>Tên</th>
-                                            <th>Màu sắc</th>
-                                            <th>Dung lượng</th>
-                                            <th>Số lượng còn</th>
-                                            <th>Giá</th>
-                                            <th>Ngày cập nhật</th>
-                                            <th>Hành động</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                         </div>

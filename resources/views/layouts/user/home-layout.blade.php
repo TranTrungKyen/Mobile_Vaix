@@ -24,17 +24,7 @@
         <section class="container my-3">
             <div class="row">
                 <div class="col-md-3">
-                    <nav class="list-group font-size-14">
-                        <x-category-item icon="fas fa-mobile-alt" text="IPhone" link="#"></x-category-item>
-                        <x-category-item icon="fas fa-tablet-alt" text="iPad" link="#"></x-category-item>
-                        <x-category-item icon="fas fa-mobile-alt" text="Apple Watch" link="#"></x-category-item>
-                        <x-category-item icon="fas fa-mobile-alt" text="Xiaomi" link="#"></x-category-item>
-                        <x-category-item icon="fas fa-mobile-alt" text="Samsung" link="#"></x-category-item>
-                        <x-category-item icon="fas fa-mobile-alt" text="Realme" link="#"></x-category-item>
-                        <x-category-item icon="fas fa-mobile-alt" text="VSmart" link="#"></x-category-item>
-                        <x-category-item icon="fa fa-gamepad" text="Phụ kiện - Đồ chơi" link="#"></x-category-item>
-                        <x-category-item icon="fa-solid fa-newspaper" text="Tin tức" link="#"></x-category-item>
-                    </nav>
+                    <x-category-list/>
                 </div>
                 <div class="col-md-6">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -152,58 +142,22 @@
                     <div class="carousel-inner position-relative">
                         <div class="carousel-item active">
                             <div class="row">
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
                                     <x-product-card :product="[]"/>
-                                </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
-                                <div class="col-md-4 col-lg-3">
-                                    <x-product-card :product="[]"/>
-                                </div>
+                                <x-product-card :product="[]"/>
+                                <x-product-card :product="[]"/>
+                                <x-product-card :product="[]"/>
+                                <x-product-card :product="[]"/>
                             </div>
                         </div>
                     </div>
@@ -228,18 +182,10 @@
                 <p class="mb-0 text-white font-weight-bold font-size-24">Xiaomi nổi bật</p>
             </div>
             <div class="row mt-4">
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
+                <x-product-card :product="[]"/>
+                <x-product-card :product="[]"/>
+                <x-product-card :product="[]"/>
+                <x-product-card :product="[]"/>
             </div>
         </section>
         {{-- Xiaomi end--}}
@@ -252,18 +198,10 @@
                 <p class="mb-0 text-white font-weight-bold font-size-24">Realme nổi bật</p>
             </div>
             <div class="row mt-4">
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
-                <div class="col-md-3">
-                    <x-product-card :product="[]"/>
-                </div>
+                <x-product-card :product="[]"/>
+                <x-product-card :product="[]"/>
+                <x-product-card :product="[]"/>
+                <x-product-card :product="[]"/>
             </div>
         </section>
         {{-- Realme end--}}
@@ -326,8 +264,12 @@
         </button>
     </div>
 
+    <script>
+        const lang = @json(__('content'));
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/common-front.js') }}"></script>
     <script src="{{ asset('js/common.js') }}"></script>
     <script src="{{ asset('js/home.js') }}"></script>
 </body>
