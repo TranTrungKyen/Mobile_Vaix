@@ -25,11 +25,6 @@ class ProductDetailService implements ProductDetailServiceInterface
             ->all();
     }
 
-    public function store($data)
-    {
-        return $this->repository->create($data);
-    }
-
     public function storeMultiple($dataProductDetailForm, $productId)
     {
         foreach ($dataProductDetailForm->color_id as $key => $color_id) {
@@ -76,5 +71,15 @@ class ProductDetailService implements ProductDetailServiceInterface
     public function delete($id)
     {
         return $this->repository->delete($id);
+    }
+
+    public function getListProductDetailByName($name)
+    {
+        return $this->repository->findProductDetailsByProductName($name);
+    }
+
+    public function find($id)
+    {
+        return $this->repository->find($id);
     }
 }

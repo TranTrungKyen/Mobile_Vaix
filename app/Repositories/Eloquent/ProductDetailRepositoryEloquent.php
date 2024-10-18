@@ -26,6 +26,16 @@ class ProductDetailRepositoryEloquent extends BaseRepository implements ProductD
 
     public function buildQuery($model, $filters)
     {
-        //
+        return $model;
+    }
+
+    public function findProductDetailsByProductName($name)
+    {
+        return $this->model->with(['product', 'color', 'storage'])
+            ->whereHas('product', function ($query) use ($name) {
+                $query->where('name', 'like', '%' . $name . '%')
+                    ->whereNull('deleted_at');
+            })->orderBy('updated_at', 'desc')
+            ->get();
     }
 }

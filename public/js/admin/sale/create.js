@@ -156,10 +156,10 @@ $(document).ready(function () {
             const listGroupItemsHtml = data.productDetails.map((productDetail, index) => {
                 let dataProduct = {
                     'product_detail_id': productDetail.id,
-                    'image': productDetail.product.image.replace('public/', STORAGE_URL),
+                    'image': '/' + productDetail.product.image,
                     'name': productDetail.product.name,
                     'color': productDetail.color.name,
-                    'storage': productDetail.storage.storage,
+                    'storage': productDetail.storage.name,
                     'price': productDetail.price,
                 };
                 return `
@@ -277,7 +277,7 @@ $(document).ready(function () {
                     success: function (data) {
                         if (data.status) {
                             localStorage.setItem('success', data.message);
-                            window.location.href = data.redrirectRoute;
+                            window.location.href = data.redirectRoute;
                         } else {
                             toastr.error(data.message);
                         }

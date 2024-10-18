@@ -32,7 +32,7 @@ class ProductController extends Controller
             $orderBy['name'] = $request->sort_name;
         }
         $filters['filter'] = $condition;
-        $products = $this->service->paginateByFilters($filters, 2, orderBy: $orderBy);
+        $products = $this->service->paginateByFilters($filters, orderBy: $orderBy);
         if ($request->ajax()) {
             $htmls = view('components.product-list', compact('products'))->render();
 

@@ -7,6 +7,8 @@ use Illuminate\Support\ServiceProvider;
 class RepositoryServiceProvider extends ServiceProvider
 {
     protected $repositories = [
+        \App\Repositories\Contracts\ProductDetailSaleRepository::class => \App\Repositories\Eloquent\ProductDetailSaleRepositoryEloquent::class,
+        \App\Repositories\Contracts\SaleRepository::class => \App\Repositories\Eloquent\SaleRepositoryEloquent::class,
         \App\Repositories\Contracts\ImageRepository::class => \App\Repositories\Eloquent\ImageRepositoryEloquent::class,
         \App\Repositories\Contracts\ProductDetailRepository::class => \App\Repositories\Eloquent\ProductDetailRepositoryEloquent::class,
         \App\Repositories\Contracts\StorageRepository::class => \App\Repositories\Eloquent\StorageRepositoryEloquent::class,
