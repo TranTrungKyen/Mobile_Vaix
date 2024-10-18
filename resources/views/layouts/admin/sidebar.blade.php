@@ -41,6 +41,14 @@
                         <p>Quản lý sản phẩm</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a 
+                    href="{{ route('admin.sale.index') }}"
+                    >
+                        <i class="fas fa-box-open"></i>
+                        <p>Quản lý khuyến mại</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

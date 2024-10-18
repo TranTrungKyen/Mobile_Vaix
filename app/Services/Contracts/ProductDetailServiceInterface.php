@@ -14,4 +14,8 @@ interface ProductDetailServiceInterface
     public function updateOrCreateMultiple($request, $productId);
 
     public function delete($id);
+
+    public function getListProductDetailByName($name);
+
+    public function find($id);
 }

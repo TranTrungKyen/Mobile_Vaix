@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\SaleController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,6 @@ Route::middleware('authAdmin')->prefix('admin')->name('admin.')->group(function 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 
     Route::prefix('product')->name('product.')->controller(AdminProductController::class)->group(function () {
-        // Route::get('/', 'index')->name('index');
         Route::get('/', 'listDetail')->name('index');
         Route::get('/getData', 'getData')->name('get-data');
         Route::get('/getDataDetail', 'getDataDetail')->name('get-data-detail');
@@ -45,5 +45,14 @@ Route::middleware('authAdmin')->prefix('admin')->name('admin.')->group(function 
         Route::get('/detail/{id}', 'detail')->name('detail');
         Route::post('/delete/{id}', 'delete')->name('delete');
         Route::get('/test', 'test')->name('test');
+    });
+
+    Route::prefix('sale')->name('sale.')->controller(SaleController::class)->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::get('/find', 'find')->name('find');
+        Route::post('/store', 'store')->name('store');
+        Route::post('/delete/{id}', 'delete')->name('delete');
+        Route::get('/detail/{id}', 'detail')->name('detail');
     });
 });

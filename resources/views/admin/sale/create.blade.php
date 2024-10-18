@@ -102,15 +102,13 @@
                                                         <div class="row g-0">
                                                             <div class="col-md-4 d-flex align-items-center">
                                                                 @php
-                                                                    $productImage = !empty($item->product->image)
-                                                                        ? Storage::url($item->product->image)
-                                                                        : asset(AVT_URL['DEFAULT']);
+                                                                    $productImage = asset($item->product->image ?? IMAGE['DEFAULT']);
                                                                     $dataProduct = [
                                                                         'product_detail_id' => $item->id,
                                                                         'image' => $productImage,
                                                                         'name' => $item->product->name,
                                                                         'color' => $item->color->name,
-                                                                        'storage' => $item->storage->storage,
+                                                                        'storage' => $item->storage->name,
                                                                         'price' => $item->price,
                                                                     ];
                                                                 @endphp
@@ -128,7 +126,7 @@
                                                                     </p>
                                                                     <p class="card-text mb-0">
                                                                         <small class="text-muted">Dung lượng:
-                                                                            {{ $item->storage->storage }}</small>
+                                                                            {{ $item->storage->name }}</small>
                                                                     </p>
                                                                     <p class="card-text">
                                                                         <div class="text-muted d-flex">
@@ -176,7 +174,6 @@
     {{-- Custorm js --}}
     <script>
         const errors = @json($errors);
-        const STORAGE_URL = @json(Storage::url(''));
     </script>
     <script src="{{ asset('js/admin/sale/create.js') }}"></script>
 @endpush

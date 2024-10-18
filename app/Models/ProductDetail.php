@@ -41,6 +41,11 @@ class ProductDetail extends Model
         return $this->belongsTo(Storage::class);
     }
 
+    public function productDetailSale()
+    {
+        return $this->hasMany(ProductDetailSale::class);
+    }
+
     // Automatically update the 'updated_at' field of the related Product
     protected $touches = ['product'];
 }

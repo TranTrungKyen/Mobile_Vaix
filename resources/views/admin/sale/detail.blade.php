@@ -85,18 +85,11 @@
                                                                     <div class="row">
                                                                         <div class="col-md-4 d-flex align-items-center">
                                                                             @php
-                                                                                $srcImage = $item->productDetail
-                                                                                    ->product->image
-                                                                                    ? Storage::url(
-                                                                                        $item->productDetail->product
-                                                                                            ->image,
-                                                                                    )
-                                                                                    : asset(AVT_URL['DEFAULT']);
+                                                                                $srcImage = asset($item->productDetail->product->image ?? AVT_URL['DEFAULT']);
                                                                                 $name =
                                                                                     $item->productDetail->product->name;
                                                                                 $price = $item->productDetail->price;
-                                                                                $color =
-                                                                                    $item->productDetail->color->name;
+                                                                                $color = $item->productDetail->color->name;
                                                                                 $storage =
                                                                                     $item->productDetail->storage
                                                                                         ->storage;
