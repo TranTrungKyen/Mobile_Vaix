@@ -15,38 +15,30 @@ class ProductController extends Controller
         $this->service = $service;
     }
 
-    public function index($categoryId)
-    {
-        $products = $this->service->findByField('category_id', $categoryId);
-        return view('user.product.index', compact('products'));
-    }
-
     public function detail()
     {
         return view('user.product.detail');
     }
 
-    public function getByCondition (Request $request) 
+    public function getByCondition(Request $request)
     {
         $orderBy['updated_at'] = 'desc';
         $condition['name'] = $request->name ?? '';
         if ($request->has('category_id')) {
             $condition['category_id'] = $request->category_id;
         }
-        
-        if ($request->has('sort_price') && !empty($request->sort_price)) {
+        if ($request->has('sort_name') && !empty($request->sort_name)) {
             unset($orderBy);
-            $orderBy['price_original'] = $request->sort_price;
+            $orderBy['name'] = $request->sort_name;
         }
-        $filters = [
-            'filter' => $condition,
-        ];
-        $products = $this->service->getAllByFilters($filters, orderBy: $orderBy);
-        if($request->ajax()) {
+        $filters['filter'] = $condition;
+        $products = $this->service->paginateByFilters($filters, 2, orderBy: $orderBy);
+        if ($request->ajax()) {
             $htmls = view('components.product-list', compact('products'))->render();
 
             return response()->json($htmls);
         }
+
         return view('user.product.index', compact('products'));
     }
 }

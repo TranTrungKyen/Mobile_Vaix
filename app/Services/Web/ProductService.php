@@ -32,9 +32,9 @@ class ProductService implements ProductServiceInterface
 
     public function paginateByFilters(
         $filters = [],
-        $pageSize = 10,
+        $pageSize = 12,
         $relationship = [],
-        $orderBy = ['id' => 'desc'],
+        $orderBy = ['updated_at' => 'desc'],
         $columns = '*'
     ) {
         return $this->repository->paginateByFilters($filters, $pageSize, $relationship, $orderBy, $columns);
@@ -47,7 +47,7 @@ class ProductService implements ProductServiceInterface
 
     public function find($id)
     {
-        return $this->repository->find($id);
+        return $this->repository->firstById($id);
     }
 
     public function findByField($fieldName, $value)
@@ -56,11 +56,11 @@ class ProductService implements ProductServiceInterface
     }
 
     public function getAllByFilters(
-        $filters = [], 
-        $relationship = [], 
-        $orderBy = [], 
+        $filters = [],
+        $relationship = [],
+        $orderBy = [],
         $columns = '*'
-        ) {
+    ) {
         if ($orderBy['price_original'] ?? '') {
             switch ($orderBy['price_original']) {
                 case 'asc':
@@ -71,6 +71,7 @@ class ProductService implements ProductServiceInterface
                     break;
             }
         }
+
         return $this->repository->getAllByFilters($filters, $relationship, $orderBy, $columns);
     }
 

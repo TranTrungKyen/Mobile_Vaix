@@ -9,5 +9,17 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface ProductRepository extends RepositoryInterface
 {
-    // Add your interface methods here
+    public function firstById($id, $relationship);
+
+    public function isValidKey($array, $key);
+
+    public function buildRelationShip($model, $relationship);
+
+    public function buildLimit($model, $limit, $offset);
+
+    public function buildOrderBy($model, $orderBy);
+
+    public function paginateByFilters($filters, $pageSize, $relationship, $orderBy, $columns);
+
+    public function getAllByFilters($filters, $relationship, $orderBy, $columns);
 }

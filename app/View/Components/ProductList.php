@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 class ProductList extends Component
 {
     public $products;
+
     /**
      * Create a new component instance.
      */

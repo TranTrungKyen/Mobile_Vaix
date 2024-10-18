@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [UserController::class, 'index'])->name('home');
 
-
 Route::prefix('product')->name('product.')->controller(ProductController::class)->group(function () {
-    Route::get('/category/{id}', 'index')->name('index');
     Route::get('/detail', 'detail')->name('detail');
     Route::get('/search', 'getByCondition')->name('get-by-condition');
 });
