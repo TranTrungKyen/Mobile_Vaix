@@ -256,7 +256,7 @@ class ProductController extends Controller
         return response()->json($notification);
     }
 
-    public function test () 
+    public function test()
     {
         return view('admin.product.test');
     }

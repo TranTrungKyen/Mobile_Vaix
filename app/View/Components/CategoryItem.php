@@ -12,13 +12,13 @@ class CategoryItem extends Component
 
     public $text;
 
-    public $link;
+    public $id;
 
-    public function __construct($icon, $text, $link = '#')
+    public function __construct($icon, $text, $id = '')
     {
         $this->icon = $icon;
         $this->text = $text;
-        $this->link = $link;
+        $this->id = $id;
     }
 
     /**

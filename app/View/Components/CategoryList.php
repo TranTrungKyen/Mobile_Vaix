@@ -10,6 +10,7 @@ use Illuminate\View\Component;
 class CategoryList extends Component
 {
     private $service;
+
     /**
      * Create a new component instance.
      */
@@ -24,6 +25,7 @@ class CategoryList extends Component
     public function render(): View|Closure|string
     {
         $categories = $this->service->all();
+
         return view('components.category-list', compact('categories'));
     }
 }

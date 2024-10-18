@@ -40,13 +40,13 @@ const MAX_QTY_IMAGE_PRODUCT = 5;
 const FORMAT_DATE_TIME = 'Y-m-d H:i:s';
 
 const CATEGORY_ICONS = [
-    'fas fa-mobile-alt',    
-    'fas fa-tablet-alt',     
-    'fas fa-mobile-alt',  
-    'fas fa-mobile-alt',    
-    'fas fa-mobile-alt',    
-    'fas fa-mobile-alt',   
-    'fas fa-mobile-alt',  
-    'fa fa-gamepad',        
-    'fa-solid fa-newspaper', 
+    'fas fa-mobile-alt',
+    'fas fa-tablet-alt',
+    'fas fa-mobile-alt',
+    'fas fa-mobile-alt',
+    'fas fa-mobile-alt',
+    'fas fa-mobile-alt',
+    'fas fa-mobile-alt',
+    'fa fa-gamepad',
+    'fa-solid fa-newspaper',
 ];

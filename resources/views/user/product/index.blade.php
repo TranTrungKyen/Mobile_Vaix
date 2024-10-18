@@ -16,10 +16,10 @@
             <div class="col-4">
                 <form class="filter-product-form-js" action="{{ route('product.get-by-condition') }}" method="GET">
                     @csrf
-                    <select class="form-select float-right" aria-label="Default select example" name="sort_price">
-                        <option value="" selected>Giá</option>
-                        <option value="asc">Thấp đến cao</option>
-                        <option value="desc">Cao đến thấp</option>
+                    <select class="form-select float-right" aria-label="Default select example" name="sort_name">
+                        <option value="" selected>Tên</option>
+                        <option value="asc">A -> Z</option>
+                        <option value="desc">Z -> A</option>
                     </select>
                 </form>
             </div>
@@ -27,7 +27,6 @@
         <div class="list-product-js row">
             <x-product-list :products="$products" />
         </div>
-        @include('layouts.user.pagination')
     </section>
 @endsection
 @push('scripts')

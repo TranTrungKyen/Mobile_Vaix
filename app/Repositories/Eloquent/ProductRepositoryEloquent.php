@@ -13,6 +13,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
  */
 class ProductRepositoryEloquent extends BaseRepository implements ProductRepository
 {
+    // use RepositoryTraits;
     /**
      * Specify Model class name
      *
@@ -41,6 +42,23 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         }
 
         return $model;
+    }
+
+    public function firstById($id, $relationship = [])
+    {
+        $this->applyCriteria();
+        $this->applyScope();
+
+        $model = $this->model;
+
+        $model = $this->buildRelationShip($model, $relationship);
+        $model = $model->find($id);
+
+        $this->resetModel();
+
+        if ($model) {
+            return $this->parserResult($model);
+        }
     }
 
     /**
@@ -76,7 +94,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         $filters = [],
         $pageSize = 10,
         $relationship = [],
-        $orderBy = ['id' => 'desc'],
+        $orderBy = ['updated_at' => 'desc'],
         $columns = '*'
     ) {
         $this->applyCriteria();
@@ -97,7 +115,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
      * @param array $orderBy
      * @return \Illuminate\Database\Eloquent\Model
      */
-    private function buildOrderBy($model, $orderBy = [])
+    public function buildOrderBy($model, $orderBy = [])
     {
         if (!empty($orderBy)) {
             foreach ($orderBy as $column => $direction) {
@@ -115,7 +133,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
      * @param int $offset
      * @return \Illuminate\Database\Eloquent\Model
      */
-    private function buildLimit($model, $limit = 10, $offset = 0)
+    public function buildLimit($model, $limit = 10, $offset = 0)
     {
         return $model->limit($limit)->offset($offset);
     }
@@ -124,7 +142,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
      * @param array $relationship
      * @return \Illuminate\Database\Eloquent\Model
      */
-    private function buildRelationShip($model, $relationship = [])
+    public function buildRelationShip($model, $relationship = [])
     {
         if (!empty($relationship)) {
             $model = $model->with($relationship);
@@ -133,7 +151,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
         return $model;
     }
 
-    private function isValidKey($array, $key)
+    public function isValidKey($array, $key)
     {
         return array_key_exists($key, $array) && !is_null($array[$key]);
     }
