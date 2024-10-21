@@ -5,10 +5,10 @@
 @section('content')
     <section class="container">
         <div class="d-flex py-3">
-            <h1 class="font-size-24 mb-0">iPhone 14 Pro Max chính hãng VN/A</h1>
+            <h1 class="font-size-24 mb-0">{{ $product->name ?? 'Ten' }}</h1>
             <div class="d-flex align-items-center">
                 <p class="mb-0 mx-3">
-                    Giá tốt nhất, số lượng có hạn
+                    {{ $product->sub_title ?? 'Tieu de phu' }}
                 </p>
                 <x-star-rating rating="3" reviewCount="15" />
             </div>
@@ -44,10 +44,7 @@
                     <div class="product-desc">
                         <h5 class="bg-primary-custom text-center rounded text-white py-2">Mô tả sản phẩm</h5>
                         <p class="product-desc__content font-size-12">
-                            Realme GT Neo6 - Cam kết máy mới 100% Fullbox đầy đủ phụ kiện, chưa qua sử dụng, chỉ bóc seal để
-                            unlock SIM dùng ổn định. Bộ sản phẩm chuẩn của máy bao gồm vỏ hộp ngoài, thân máy, củ sạc, dây
-                            sạc, que chọc sim, sách HDSD và ốp lưng tặng kèm. Duy nhất tại Dienthoaihay.vn sản phẩm được bảo
-                            hành VIP toàn diện cả nguồn, màn hình, vân tay.
+                            {!! nl2br(e($product->description)) !!}
                         </p>
                     </div>
                 </div>
@@ -163,47 +160,23 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">Thẻ SIM:</th>
-                                        <td>Nano + eSim</td>
+                                        <td>{{ $product->sim_card }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Kiểu thiết kế:</th>
-                                        <td>2 mặt kính, khung thép</td>
+                                        <td>{{ $product->design_style }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Màn hình:</th>
-                                        <td>6.7 inches, LTPO Super Retina XDR OLED, 120Hz, HDR10, Dolby Vision, 2000 nits</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Độ phân giải:</th>
-                                        <td>1290 x 2796 pixels, tỷ lệ 19.5:9</td>
+                                        <td>{{ $product->screen_resolution ?? 'man hinh' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">CPU:</th>
-                                        <td>Apple A16 Bionic (4 nm)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">RAM:</th>
-                                        <td>6GB</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Bộ nhớ/ Thẻ nhớ:</th>
-                                        <td>128/256/512GB/1TB</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Camera sau:</th>
-                                        <td>48 MP, f/1.8, 24mm (wide), 12 MP, 12 MP</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Camera trước:</th>
-                                        <td>12 MP, f/1.9, 23mm (wide)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Jack 3.5mm/ Loa:</th>
-                                        <td>Không/ Loa kép Stereo</td>
+                                        <td>{{ $product->cpu ?? 'CPU' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Pin:</th>
-                                        <td>4323mAh, sạc nhanh 27W</td>
+                                        <td>{{ $product->pin ?? 'Pin' }}</td>
                                     </tr>
                                 </tbody>
                             </table>

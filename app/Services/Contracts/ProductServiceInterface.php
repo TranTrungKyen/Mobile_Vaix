@@ -22,4 +22,6 @@ interface ProductServiceInterface
     public function findByField($fieldName, $value);
 
     public function getAllByFilters($filters, $relationship, $orderBy, $columns);
+
+    public function getProductSalesLimit16();
 }

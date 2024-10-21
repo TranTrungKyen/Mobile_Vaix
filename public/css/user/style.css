@@ -374,3 +374,7 @@ a:hover {
  {
     display: block;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

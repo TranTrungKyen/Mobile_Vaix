@@ -26,7 +26,8 @@
                 <div class="col-md-3">
                     <x-category-list/>
                 </div>
-                <div class="col-md-6">
+                <div id="banner-center-js" class="col-md-6">
+                    {{-- Banner --}}
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner rounded">
                             <div class="carousel-item active">
@@ -49,24 +50,20 @@
                             <span class="sr-only">Next</span>
                         </button>
                     </div>
+                    {{-- Banner end --}}
+                    {{-- Product by banner --}}
                     <ul class="list-group d-flex flex-row mt-3">
-                        <li class="list-group-item border-right-0 font-size-14">
-                            Redmi 12 5G NFC sieu re
+                        <li class="list-group-item border-right-0 font-size-14 flex-grow-1 cursor-pointer h-100" data-target="#carouselExampleControls" data-slide-to="0">
+                            Redmi note 13 5G NFC sieu re
                         </li>
                         <span class="separate"></span>
-                        <li class="list-group-item border-right-0 font-size-14">
-                            Redmi 12 5G NFC sieu re
-                        </li>
-                        <span class="separate"></span>
-                        <li class="list-group-item border-right-0 font-size-14">
-                            Redmi 12 5G NFC sieu re
-                        </li>
-                        <span class="separate"></span>
-                        <li class="list-group-item font-size-14">
-                            Redmi 12 5G NFC sieu re
+                        <li class="list-group-item border-right-0 font-size-14 flex-grow-1 cursor-pointer h-100" data-target="#carouselExampleControls" data-slide-to="1">
+                            Redmi note 12 5G NFC sieu re
                         </li>
                     </ul>
+                    {{-- Product by banner end --}}
                 </div>
+                {{-- Banner left --}}
                 <div class="col-md-3">
                     <div class="banner-items d-flex align-items-end flex-column">
                         <img src="{{ asset('images/note-11-pro-5g.jpg') }}" class="w-100 rounded" alt="banner-2">
@@ -75,6 +72,7 @@
                         <img src="{{ asset('images/redmi-note-12.jpg') }}" class="w-100 mt-2 rounded" alt="banner-3">
                     </div>
                 </div>
+                {{-- Banner left end --}}
             </div>
         </section>
         {{-- category and slider end --}}
@@ -93,121 +91,47 @@
         <section class="container mt-3">
             <div class="row">
                 <div class="col-md-3">
-                    <div
+                    <a
+                        href = {{ route('product.get-by-condition') . '?category_id=4' }}
                         class="brand-image-item bg-white d-flex justify-content-center align-items-center rounded overflow-hidden py-2">
                         <img class="w-100" src="{{ asset('images/hang4.png') }}" alt="hang 4">
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <div
+                    <a
+                        href = {{ route('product.get-by-condition') . '?category_id=6' }}
                         class="brand-image-item bg-white d-flex justify-content-center align-items-center rounded overflow-hidden py-2">
                         <img class="w-100" src="{{ asset('images/hang3.png') }}" alt="hang 3">
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <div
+                    <a
+                        href = {{ route('product.get-by-condition') . '?category_id=5' }}
                         class="brand-image-item bg-white d-flex justify-content-center align-items-center rounded overflow-hidden py-2">
                         <img class="w-100" src="{{ asset('images/hang2.png') }}" alt="hang 2">
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <div
+                    <a
+                        href = {{ route('product.get-by-condition') . '?category_id=1' }}
                         class="brand-image-item bg-white d-flex justify-content-center align-items-center rounded overflow-hidden py-2">
                         <img class="w-100" src="{{ asset('images/hang1.png') }}" alt="hang 1">
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
         {{-- Brand images end --}}
 
         {{-- Product sales --}}
-        <section class="container mt-3">
-            <div class="promo-banner">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div class="d-flex align-items-center">
-                        <span class="hot-label">HOT!</span>
-                        <h1 class="promo-title text-white">ÔI RẺ QUÁ!</h1>
-                    </div>
-                    <div class="brand-links">
-                        <a class="mr-2 ml-3" href="#">IPHONE</a>
-                        <span class="separate"></span>
-                        <a class="mr-2 ml-3" href="#">XIAOMI</a>
-                        <span class="separate"></span>
-                        <a class="mr-2 ml-3" href="#">SAMSUNG</a>
-                        <span class="separate"></span>
-                        <a class="mr-0 ml-3" href="#">REALME</a>
-                    </div>
-                </div>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner position-relative">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                    <x-product-card :product="[]"/>
-                                    <x-product-card :product="[]"/>
-                                    <x-product-card :product="[]"/>
-                                    <x-product-card :product="[]"/>
-                                    <x-product-card :product="[]"/>
-                                    <x-product-card :product="[]"/>
-                                    <x-product-card :product="[]"/>
-                                    <x-product-card :product="[]"/>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <x-product-card :product="[]"/>
-                                <x-product-card :product="[]"/>
-                                <x-product-card :product="[]"/>
-                                <x-product-card :product="[]"/>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control py-2 next-btn">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                    <button class="carousel-control py-2 prev-btn">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
+        <x-product-sales />
         {{-- Product sales end --}}
 
         {{-- Product featured --}}
-        {{-- Xiaomi --}}
-        <section class="container py-5">
-            <div class="title-review-talk rounded position-relative">
-                <span class="icon-cat-menu">
-                    <img class="w-50" src="{{ asset('images/xiaomi.png') }}" alt="hang 4">
-                </span>
-                <p class="mb-0 text-white font-weight-bold font-size-24">Xiaomi nổi bật</p>
-            </div>
-            <div class="row mt-4">
-                <x-product-card :product="[]"/>
-                <x-product-card :product="[]"/>
-                <x-product-card :product="[]"/>
-                <x-product-card :product="[]"/>
-            </div>
-        </section>
-        {{-- Xiaomi end--}}
-        {{-- Realme --}}
-        <section class="container py-5">
-            <div class="title-review-talk rounded position-relative">
-                <span class="icon-cat-menu">
-                    <img class="w-50" src="{{ asset('images/realme.png') }}" alt="hang 4">
-                </span>
-                <p class="mb-0 text-white font-weight-bold font-size-24">Realme nổi bật</p>
-            </div>
-            <div class="row mt-4">
-                <x-product-card :product="[]"/>
-                <x-product-card :product="[]"/>
-                <x-product-card :product="[]"/>
-                <x-product-card :product="[]"/>
-            </div>
-        </section>
-        {{-- Realme end--}}
+        <x-products-feature :image="asset('images/xiaomi.png')" nameCategory="Xiaomi nổi bật" categoryId="4" />
+        <x-products-feature :image="asset('images/realme.png')" nameCategory="Realme nổi bật" categoryId="5"/>
         {{-- Product featured end --}}
         {{-- Purchasing advice --}}
-        <section class="container py-5">
+        {{-- <section class="container py-5">
             <div class="title-review-talk rounded position-relative">
                 <span class="icon-cat-menu icon-cat-menu--rating"></span>
                 <p class="mb-0 text-white font-weight-bold">Tư vấn mua hàng ?</p>
@@ -250,9 +174,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         {{-- Purchasing advice end --}}
-        @include('layouts.user.review-talk')
+        {{-- @include('layouts.user.review-talk') --}}
         @include('layouts.user.footer')
         @include('layouts.user.social')
         <a href="#" class="contact-button" aria-label="Liên hệ">
