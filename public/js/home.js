@@ -1,9 +1,8 @@
 $(document).ready(function () {
-    $('.prev-btn').on('click', function () {
+    $('#banner-center-js').on('click', '.prev-btn', function () {
         $('#carouselExampleIndicators').carousel('prev');
-    });
-
-    $('.next-btn').on('click', function () {
-        $('#carouselExampleIndicators').carousel('next'); 
-    });
+    })
+    $('#banner-center-js').on('click', '.next-btn', function () {
+        $('#carouselExampleIndicators').carousel('prev');
+    })
 });

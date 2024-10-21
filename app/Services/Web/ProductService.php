@@ -105,4 +105,11 @@ class ProductService implements ProductServiceInterface
 
         return $this->repository->update($data, $id);
     }
+
+    public function getProductSalesLimit16()
+    {
+        return $this->repository->all()->sortByDesc(function ($product) {
+            return $product->price_current;
+        })->take(16);
+    }
 }
