@@ -26,7 +26,7 @@
         @yield('content')
 
         {{-- @include('layouts.user.rating') --}}
-        @include('layouts.user.review-talk')
+        {{-- @include('layouts.user.review-talk') --}}
         @include('layouts.user.footer')
         @include('layouts.user.social')
         <a href="#" class="contact-button" aria-label="Liên hệ">

@@ -20,21 +20,23 @@
             <div class="carousel-inner position-relative">
                 <div class="carousel-item active">
                     <div class="row">
-                        @for ($i = 0; $i < $products->count(); $i++)
-                            @if ($i > 7)
+                        @foreach ($products as $key => $item)
+                            @if ($key > 7)
                                 @break;
                             @endif
-                        <x-product-card :product="$products[$i]"/>
-                        @endfor
+                            <x-product-card :product="$item"/>
+                        @endforeach
                     </div>
                 </div>
+                @if ($products->count() > 7)
                 <div class="carousel-item">
                     <div class="row">
                         @for ($i = 8; $i < $products->count(); $i++)
-                        <x-product-card :product="$products[$i]"/>
+                            <x-product-card :product="$products[$i]"/>
                         @endfor
                     </div>
                 </div>
+                @endif
             </div>
             <button class="carousel-control py-2 next-btn">
                 <i class="fa-solid fa-chevron-right"></i>

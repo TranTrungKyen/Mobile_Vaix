@@ -47,7 +47,9 @@ class ProductService implements ProductServiceInterface
 
     public function find($id)
     {
-        return $this->repository->firstById($id);
+        $relationship = ['productDetails.color'];
+
+        return $this->repository->firstById($id, $relationship);
     }
 
     public function findByField($fieldName, $value)
@@ -108,8 +110,11 @@ class ProductService implements ProductServiceInterface
 
     public function getProductSalesLimit16()
     {
-        return $this->repository->all()->sortByDesc(function ($product) {
+        return $this->repository->all()->filter(function ($product) {
+            return !is_null($product->price_current);
+        })->sortBy(function ($product) {
             return $product->price_current;
-        })->take(16);
+        })->take(16)
+            ->values();
     }
 }

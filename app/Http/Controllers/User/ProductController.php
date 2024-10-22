@@ -15,9 +15,11 @@ class ProductController extends Controller
         $this->service = $service;
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('user.product.detail');
+        $product = $this->service->find($id);
+
+        return view('user.product.detail', compact('product'));
     }
 
     public function getByCondition(Request $request)

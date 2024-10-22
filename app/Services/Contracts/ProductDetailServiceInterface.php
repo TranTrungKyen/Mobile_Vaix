@@ -18,4 +18,6 @@ interface ProductDetailServiceInterface
     public function getListProductDetailByName($name);
 
     public function find($id);
+
+    public function findByField($key, $value);
 }

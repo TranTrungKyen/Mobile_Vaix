@@ -20,15 +20,11 @@
                 <div class="col-md-3">
                     <div id="productImageControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="w-100" src="{{ asset('images/product-detail.png') }}" alt="mobile">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="w-100" src="{{ asset('images/product-detail.png') }}" alt="mobile">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="w-100" src="{{ asset('images/product-detail.png') }}" alt="mobile">
-                            </div>
+                            @foreach ($product->images as $key => $item)
+                                <div class="carousel-item {{ ($key != 0) ? '' : 'active' }}">
+                                    <img class="w-100" src="{{ asset($item->url ?? IMAGE['DEFAULT']) }}" alt="image {{ $key }}">
+                                </div>
+                            @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-target="#productImageControls"
                             data-slide="prev">
@@ -49,44 +45,59 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="d-flex">
-                        <h2 class="price mb-0 mr-2">7.190.000đ</h2>
-                        <p class="text-primary-custom font-weight-bold mb-0 d-flex align-items-end mr-3">(Màu Tím)</p>
-                        <p class="old-price mb-0 d-flex align-items-end">9.690.000đ</p>
+                    <div class="d-flex product-detail-price-js">
+                        @if (empty($product->price_current))
+                            <h2 class="price mb-0 mr-2 price-js--vi" data-amount="{{ $product->price_original }}"></h2>
+                        @else
+                            <h2 class="price mb-0 mr-2 price-js--vi" data-amount="{{ $product->price_current }}"></h2>
+                            <p class="old-price mb-0 d-flex align-items-end price-js--vi" data-amount="{{ $product->price_original }}"></p>
+                        @endif
                     </div>
-                    <p class="availability mb-2">
-                        <strong>Tình trạng:</strong> Còn hàng <span class="text-success">✓</span>
-                    </p>
-                    <div class="mb-3">
-                        <strong>Bộ nhớ:</strong><br>
-                        <button class="option-button active">12GB / 256GB<br>7.190.000đ</button>
-                        <button class="option-button">16GB / 256GB<br>8.490.000đ</button>
-                        <button class="option-button">16GB / 512GB<br>9.490.000đ</button>
+                    <div class="my-3">
+                        <x-input-storage :product="$product" />
                     </div>
 
-                    <div>
-                        <strong>Chọn màu:</strong><br>
-                        <button class="option-button active">
-                            <span class="color-option">
-                                <img class="w-100" src="{{ asset('images/small-product.jpg') }}" alt="small">
-                            </span>
-                            Tim
-                            <br>7.190.000đ
-                        </button>
-                        <button class="option-button">
-                            <span class="color-option">
-                                <img class="w-100" src="{{ asset('images/small-product.jpg') }}" alt="small">
-                            </span>
-                            Xanh
-                            <br>7.190.000đ
-                        </button>
-                        <button class="option-button">
-                            <span class="color-option">
-                                <img class="w-100" src="{{ asset('images/small-product.jpg') }}" alt="small">
-                            </span>
-                            Trắng
-                            <br>7.190.000đ
-                        </button>
+                    {{-- Color --}}
+                    <div class="d-flex mb-3">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text col-md-2" for="color">Màu sắc: </label>
+                            <select class="form-select col-md-5 border-primary" disabled="" id="color">
+                                <option value="" selected="">Chọn màu sắc</option>
+                            </select>
+                        </div>
+                    </div>
+                    {{-- Color end --}}
+
+                    <div class="card">
+                        <div class="specs-header text-center">
+                            THÔNG SỐ KỸ THUẬT
+                        </div>
+                        <div class="card-body p-0">
+                            <table class="table table-bordered table-specs mb-0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Thẻ SIM:</th>
+                                        <td>{{ $product->sim_card }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Kiểu thiết kế:</th>
+                                        <td>{{ $product->design_style }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Độ phân giải:</th>
+                                        <td>{{ $product->screen_resolution ?? 'man hinh' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CPU:</th>
+                                        <td>{{ $product->cpu ?? 'CPU' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Pin:</th>
+                                        <td>{{ $product->pin ?? 'Pin' }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="d-flex mt-4">
@@ -104,9 +115,10 @@
                         </button>
                     </div>
                 </div>
-                
+
                 {{-- Related products --}}
-                <div class="col-md-3">
+                <x-releated-products :categoryId="$product->category_id"/>
+                {{-- <div class="col-md-3">
                     <div class="card">
                         <div class="recommendation-header">
                             Có thể bạn quan tâm
@@ -146,73 +158,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                {{-- Related products end --}}
-
-                {{-- SPECIFICATIONS --}}
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="specs-header">
-                            THÔNG SỐ KỸ THUẬT
-                        </div>
-                        <div class="card-body p-0">
-                            <table class="table table-bordered table-specs mb-0">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Thẻ SIM:</th>
-                                        <td>{{ $product->sim_card }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Kiểu thiết kế:</th>
-                                        <td>{{ $product->design_style }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Màn hình:</th>
-                                        <td>{{ $product->screen_resolution ?? 'man hinh' }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">CPU:</th>
-                                        <td>{{ $product->cpu ?? 'CPU' }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Pin:</th>
-                                        <td>{{ $product->pin ?? 'Pin' }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                {{-- SPECIFICATIONS end --}}
-                {{-- Video product --}}
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="header">
-                            VIDEO SẢN PHẨM
-                        </div>
-                        <div class="card-body p-0">
-                            <div class="video-container">
-                                <img src="{{ asset('images/hqdefault.jpg') }}" alt="video" class="w-100">
-                            </div>
-                            <div class="row no-gutters mt-3">
-                                <div class="col-6 pr-1">
-                                    <div class="thumbnail-container">
-                                        <img src="{{ asset('images/hqdefault_1.jpg') }}" alt="Thumbnail 1" class="img-fluid">
-                                        <div class="thumbnail-overlay">GIẢM CHƯA TỪNG CÓ</div>
-                                    </div>
-                                </div>
-                                <div class="col-6 pr-1">
-                                    <div class="thumbnail-container">
-                                        <img src="{{ asset('images/hqdefault_1.jpg') }}" alt="Thumbnail 1" class="img-fluid">
-                                        <div class="thumbnail-overlay">GIẢM CHƯA TỪNG CÓ</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- Video product end --}}
+                </div> --}}
             </div>
             {{-- Product detail end --}}
     </section>
 @endsection
+@push('scripts')
+    <script>
+        const productDetailValues = @json($product->productDetails);
+    </script>
+    <script src="{{ asset('js/product-detail.js') }}"></script>
+@endpush
