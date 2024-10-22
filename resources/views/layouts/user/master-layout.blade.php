@@ -21,7 +21,6 @@
     <div id="app" class="bg-light">
         @include('layouts.user.header')
         @include('layouts.user.category')
-        @include('layouts.user.banner')
 
         @yield('content')
 

@@ -1,5 +1,6 @@
 @extends('layouts.user.master-layout')
 @section('content')
+@include('layouts.user.banner')
     @php
         $isEmptyProducts = ($products->count() <= 0) ? true : false;
     @endphp

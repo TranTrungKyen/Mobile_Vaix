@@ -1,0 +1,24 @@
+.form-container {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.form-title {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+.form-control {
+    margin-bottom: 1rem;
+}
+.btn-order {
+    background-color: #ff7f00;
+    border-color: #ff7f00;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem;
+}
+.btn-order:hover {
+    background-color: #e67300;
+    border-color: #e67300;
+}
