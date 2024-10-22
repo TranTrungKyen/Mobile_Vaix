@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\SaleController;
+use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [UserController::class, 'index'])->name('home');
+
+Route::prefix('cart')->name('cart.')->controller(CartController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+});
 
 Route::prefix('product')->name('product.')->controller(ProductController::class)->group(function () {
     Route::get('/detail/{id}', 'detail')->name('detail');
