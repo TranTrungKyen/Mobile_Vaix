@@ -70,6 +70,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-82%);
+    border: none;
+    border-radius: 50%;
+    background-color: red;
 }
 .next-btn {
     right: 0;

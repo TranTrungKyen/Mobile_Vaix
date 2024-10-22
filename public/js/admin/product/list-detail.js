@@ -14,7 +14,7 @@ $(document).ready(function () {
             { data: 'quantity', name: 'quantity' },
             { data: 'price', name: 'price', className:'price-origin'},
             { data: 'product.updated_at', name: 'product.updated_at' },
-            { data: 'actions', name: 'actions', searchable: false },
+            { data: 'actions', name: 'actions', className: 'actions', searchable: false },
         ],
         ordering: false,
         searchDelay: 1000,
@@ -25,6 +25,7 @@ $(document).ready(function () {
             let indexNameColumn = 1;
             let productNameClass = '.name';
             let productIdClass = '.product-id';
+            let actionClass = '.actions';
             let productNameAccess = 'product.name';
             
             // row span if same product name
@@ -35,10 +36,12 @@ $(document).ready(function () {
                         let valueDataApi = getNestedFieldValue(item, productNameAccess)
                         return valueDataApi === value;
                     }).length; 
+                    $(rows).eq(i).find(actionClass).attr('rowspan', rowspanCount);
                     $(rows).eq(i).find(productIdClass).attr('rowspan', rowspanCount);
                     $(rows).eq(i).find(productNameClass).attr('rowspan', rowspanCount);
                     return;
                 } 
+                $(rows).eq(i).find(actionClass).remove();
                 $(rows).eq(i).find(productIdClass).remove();
                 $(rows).eq(i).find(productNameClass).remove();
             });

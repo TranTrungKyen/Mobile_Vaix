@@ -42,7 +42,7 @@
                         <div class="font-size-16">Sản phẩm</div>
                     </div>
                 </div>
-                <div class="header-left-icons__item d-none">
+                <div class="header-left-icons__item d-flex">
                     <div class="icon rounded-circle bg-white d-flex justify-content-center align-items-center position-relative">
                         <i class="fa-solid fa-cart-shopping text-primary-custom font-size-18"></i>
                         <span class="cart-quantity bg-white text-primary-custom rounded-circle d-flex align-items-center justify-content-center font-size-12">0</span>

@@ -1,7 +1,7 @@
 @if (!empty($product))
     <div class="col-md-3">
         <div class="product-card">
-            <a href="#">
+            <a href="{{ route('product.detail', ['id' => $product->id]) }}">
                 <div class="text-center position-relative">
                     <img src="{{ asset($product->image ?? '') }}" alt="{{ $product->name ?? '' }}" class="product-image">
                     @if (!empty($product->price_current))

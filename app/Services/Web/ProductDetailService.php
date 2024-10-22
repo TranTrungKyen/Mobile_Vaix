@@ -82,4 +82,9 @@ class ProductDetailService implements ProductDetailServiceInterface
     {
         return $this->repository->find($id);
     }
+
+    public function findByField($key, $value)
+    {
+        return $this->repository->findByField($key, $value);
+    }
 }

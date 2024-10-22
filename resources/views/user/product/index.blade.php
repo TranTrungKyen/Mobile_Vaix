@@ -11,7 +11,7 @@
         </div>
         <div class="row mb-4 {{ !$isEmptyProducts ? '' : 'd-none' }}">
             <div class="col-8">
-                <h1 class="font-size-24 mb-0">{{ $products->first()?->category->name }}</h1>
+                <h1 class="font-size-24 mb-0">Danh sách sản phẩm</h1>
             </div>
             <div class="col-4">
                 <form class="filter-product-form-js" action="{{ route('product.get-by-condition') }}" method="GET">
