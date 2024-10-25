@@ -40,7 +40,6 @@
     <script>
         var lang = @json(__('content'));
     </script>
-    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/core/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/core/popper.min.js') }}"></script>

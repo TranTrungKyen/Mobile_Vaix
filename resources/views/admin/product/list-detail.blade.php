@@ -8,6 +8,7 @@
                 </div>
                 <div class="col-6 float-end">
                     <a href="{{ route('admin.product.create') }}" class="btn btn-primary float-end">Thêm mới</a>
+                    <button class="btn btn-success export-excel-btn-js float-end me-2">Export Excel</button>
                 </div>
             </div>
             <div class="row">
@@ -27,11 +28,13 @@
                                             <th rowspan="2">Số lượng còn</th>
                                             <th rowspan="2">Giá</th>
                                             <th rowspan="2">Ngày cập nhật</th>
-                                            <th rowspan="2">Hành động</th>
+                                            <th rowspan="2"></th>
+                                            <th rowspan="2">1</th>
+                                            <th rowspan="2">2</th>
                                         </tr>
                                         <tr class="d-none">
-                                            <th></th>
-                                            <th></th>
+                                            <th class="color-storage"></th>
+                                            <th class="color-storage"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
