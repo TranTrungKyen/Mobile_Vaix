@@ -3,44 +3,35 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AdminLoginRequest;
-use App\Services\Contracts\AuthAdminServiceInterface;
-use Illuminate\Support\Facades\Log;
+use App\Http\Requests\LoginRequest;
+use App\Services\Contracts\AuthServiceInterface;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    protected $service;
+    private $service;
 
-    public function __construct(AuthAdminServiceInterface $service)
+    public function __construct(AuthServiceInterface $service)
     {
         $this->service = $service;
     }
 
-    public function login()
+    public function index()
     {
-        return view('admin.auth.login');
+        return view('auth.login');
     }
 
-    public function postLogin(AdminLoginRequest $request)
+    public function login(LoginRequest $request)
     {
-        $notification = [
-            'status' => false,
-            'redirectRoute' => route('admin.login'),
-            'message' => __('content.login_form.message.error'),
-        ];
-        try {
-            $isSuccess = $this->service->login($request);
-            if ($isSuccess) {
-                $notification = [
-                    'status' => true,
-                    'redirectRoute' => route('admin.dashboard'),
-                    'message' => __('content.login_form.message.success'),
-                ];
-            }
-        } catch (\Exception $e) {
-            Log::info($e->getMessage());
+        return $this->service->login($request);
+    }
+
+    public function logout (Request $request)
+    {
+        if(!$this->service->logout($request)) {
+            return redirect()->back()->with('error', __('content.common.logout_error'));
         }
 
-        return response()->json($notification);
+        return redirect()->route('auth.login')->with('success', __('content.common.logout_success'));
     }
 }

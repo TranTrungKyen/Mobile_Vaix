@@ -14,7 +14,7 @@ class ServiceServiceProvider extends ServiceProvider
         \App\Services\Contracts\ColorServiceInterface::class => \App\Services\Web\ColorService::class,
         \App\Services\Contracts\CategoryServiceInterface::class => \App\Services\Web\CategoryService::class,
         \App\Services\Contracts\ProductServiceInterface::class => \App\Services\Web\ProductService::class,
-        \App\Services\Contracts\AuthAdminServiceInterface::class => \App\Services\Web\AuthAdminService::class,
+        \App\Services\Contracts\AuthServiceInterface::class => \App\Services\Web\AuthService::class,
         \App\Services\Contracts\ExampleServiceInterface::class => \App\Services\Web\ExampleService::class,
     ];
 
