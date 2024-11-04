@@ -48,7 +48,7 @@
                     <ul class="dropdown-menu dropdown-user animated fadeIn">
                         <div class="dropdown-user-scroll scrollbar-outer">
                             <li>
-                                <a class="dropdown-item" href="#">Đăng xuất</a>
+                                <a class="dropdown-item" href="{{ route('auth.logout') }}">Đăng xuất</a>
                             </li>
                         </div>
                     </ul>

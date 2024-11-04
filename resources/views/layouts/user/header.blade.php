@@ -17,7 +17,7 @@
                 </div>
                 <form method="GET" action="{{ route('product.get-by-condition') }}" class="search bg-white rounded overflow-hidden d-flex align-items-center ml-4 w-100 px-2">
                     @csrf
-                    <input type="text" name="name" class="search__input border-0 h-100 outline-none w-100" placeholder="Tìm kiếm tên sản phẩm" value="{{ request('name') }}"> 
+                    <input type="text" name="name" class="search__input border-0 h-100 outline-none w-100" placeholder="Tìm kiếm tên sản phẩm" value="{{ request('name') }}">
                     <button class="border-0 bg-white">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -26,20 +26,18 @@
             <div class="header-left-icons d-flex col-4 justify-content-around">
                 <div class="header-left-icons__item d-flex">
                     <div class="icon rounded-circle bg-white d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-phone text-primary-custom font-size-18"></i>
+                        <i class="fa-solid fa-user text-primary-custom font-size-18"></i>
                     </div>
-                    <div class="content text-white ml-2">
-                        <div class="font-size-12">Bán hàng</div>
-                        <div class="font-size-16">Online</div>
-                    </div>
-                </div>
-                <div class="header-left-icons__item d-flex">
-                    <div class="icon rounded-circle bg-white d-flex justify-content-center align-items-center">
-                        <i class="fa-regular fa-circle-check text-primary-custom font-size-18"></i>
-                    </div>
-                    <div class="content text-white ml-2">
-                        <div class="font-size-12">Tra cứu</div>
-                        <div class="font-size-16">Sản phẩm</div>
+                    <div class="content text-white ml-2 d-flex align-items-center">
+                        @php
+                            $isAuth = auth()->check();
+                        @endphp
+                        @if ($isAuth)
+                            <a href="{{ route('auth.login') }}" class="font-size-16 text-white">{{ auth()->user()->name ?? 'Họ tên'}}</a>
+                            <a href="{{ route('auth.logout') }}" class="font-size-16 text-white ml-4">Đăng xuất</a>
+                        @else
+                        <a href="{{ route('auth.login') }}" class="font-size-16 text-white">Đăng nhập/Đăng ký</a>
+                        @endif
                     </div>
                 </div>
                 <div class="header-left-icons__item d-flex">

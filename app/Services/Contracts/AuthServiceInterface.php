@@ -5,7 +5,9 @@ namespace App\Services\Contracts;
 /**
  * Interface AuthAdminServiceInterface.
  */
-interface AuthAdminServiceInterface
+interface AuthServiceInterface
 {
     public function login($request);
+
+    public function logout ($request);
 }

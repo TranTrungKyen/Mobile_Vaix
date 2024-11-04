@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\SaleController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\User\ProductController;
 use App\Http\Controllers\User\UserController;
@@ -18,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::middleware('guest')->name('auth.')->controller(LoginController::class)->group(function () {
+    Route::get('/login', 'index')->name('login');
+    Route::post('/login', 'login')->name('post-login');
+    Route::get('/logout', 'logout')->name('logout')->withoutMiddleware(['guest']);
+});
+
 Route::get('/', [UserController::class, 'index'])->name('home');
 
 Route::prefix('cart')->name('cart.')->controller(CartController::class)->group(function () {
@@ -30,10 +37,6 @@ Route::prefix('product')->name('product.')->controller(ProductController::class)
 });
 
 Route::middleware('authAdmin')->prefix('admin')->name('admin.')->group(function () {
-    Route::middleware('guest')->withoutMiddleware('authAdmin')->controller(AdminController::class)->group(function () {
-        Route::get('/login', 'login')->name('login');
-        Route::post('/login', 'postLogin')->name('post-login');
-    });
 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
 

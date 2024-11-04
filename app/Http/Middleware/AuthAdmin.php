@@ -16,7 +16,7 @@ class AuthAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if (!auth()->check() || auth()->user()->role_id != ROLES['admin']) {
-            return redirect()->route('admin.login')->with('error', 'Bạn không có quyền truy cập');
+            return redirect()->route('auth.login')->with('error', 'Bạn không có quyền truy cập');
         }
 
         return $next($request);
