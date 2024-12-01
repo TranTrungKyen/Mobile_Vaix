@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="d-flex mt-4">
-                        <button class="btn btn-buy-now btn-block mr-2">
+                        <button id="fileDownload" class="btn btn-buy-now btn-block mr-2" data-link-download="https://drive.google.com/uc?export=download&id=1mFsTxZI9FZf4zXnUcp06F0btYEodaLqU">
                             <p class="mb-0">
                                 MUA NGAY
                             </p>

@@ -65,4 +65,10 @@ $(document).ready(function () {
     $('#productImageControls').on('click', '.carousel-control-next', function () {
         $('#productImageControls').carousel('next');
     })
+
+    $('#fileDownload').on('click', function (e) {
+        e.preventDefault();
+        let actionUrl = $(this).attr('data-link-download');
+        window.location.href = actionUrl;
+    })
 });
